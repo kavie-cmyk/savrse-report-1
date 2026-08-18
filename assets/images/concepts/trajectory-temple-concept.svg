@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Trajectory Temple concept illustration</title>
+<desc id="d">VR throwing game concept in a compact temple-like spatial arena. The player reads a three-dimensional trajectory around obstacles, throws a ball physically, sees immediate feedback and adjusts the next attempt.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#121724"/><stop offset=".55" stop-color="#2b241f"/><stop offset="1" stop-color="#15120f"/></linearGradient>
+  <radialGradient id="warm" cx="50%" cy="45%" r="55%"><stop stop-color="#8f5d2e" stop-opacity=".5"/><stop offset="1" stop-color="#161310" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<rect width="1200" height="675" fill="url(#warm)"/>
+<g stroke="#795839" stroke-width="5" fill="#332820">
+ <path d="M120 560V150H245V560"/><path d="M955 560V150H1080V560"/>
+ <path d="M275 560V110H380V560"/><path d="M820 560V110H925V560"/>
+</g>
+<g fill="#513b2a" stroke="#92704d" stroke-width="4"><rect x="90" y="110" width="185" height="58" rx="10"/><rect x="925" y="110" width="185" height="58" rx="10"/><rect x="245" y="72" width="165" height="58" rx="10"/><rect x="790" y="72" width="165" height="58" rx="10"/></g>
+<path d="M0 675 360 300H840L1200 675Z" fill="#2a241d"/>
+<g opacity=".35" stroke="#bc9b74" stroke-width="2"><path d="M160 675 440 300M360 675 500 300M840 675 700 300M1040 675 760 300"/><path d="M245 575H955M320 500H880M390 425H810M455 360H745"/></g>
+<g fill="#4c3828" stroke="#a67f57" stroke-width="4"><rect x="510" y="355" width="65" height="130" rx="9"/><rect x="690" y="315" width="70" height="170" rx="9"/><rect x="805" y="405" width="58" height="95" rx="9"/></g>
+<g filter="url(#glow)">
+ <circle cx="890" cy="310" r="28" fill="#2d8fc9" stroke="#8de4ff" stroke-width="5"/>
+ <circle cx="760" cy="252" r="23" fill="#d47c2c" stroke="#ffd69e" stroke-width="5"/>
+ <circle cx="1010" cy="420" r="24" fill="#45b77b" stroke="#a0f1c8" stroke-width="5"/>
+</g>
+<g fill="none" stroke-linecap="round" stroke-width="7" stroke-dasharray="15 12" filter="url(#glow)">
+ <path d="M300 525 C420 265 635 190 888 305" stroke="#54b8ff"/>
+ <path d="M300 525 C470 375 570 250 758 252" stroke="#f0a348"/>
+ <path d="M300 525 C470 520 690 560 1008 421" stroke="#57d998"/>
+</g>
+<g fill="#54b8ff"><path d="M842 284 888 305 846 320Z"/></g><g fill="#f0a348"><path d="M716 244 760 252 722 273Z"/></g><g fill="#57d998"><path d="M963 431 1009 420 981 457Z"/></g>
+<g transform="translate(250 485)">
+ <circle cx="0" cy="0" r="44" fill="#222833" stroke="#c7d1dc" stroke-width="5"/>
+ <circle cx="-14" cy="-13" r="7" fill="#7b8796"/>
+</g>
+<g fill="#c8d3de" stroke="#344356" stroke-width="5">
+ <path d="M175 675 C182 614 213 560 265 529 C300 508 331 519 333 548 C335 572 308 589 285 605 C267 618 262 644 271 675Z"/>
+ <path d="M1025 675 C1018 614 987 560 935 529 C900 508 869 519 867 548 C865 572 892 589 915 605 C933 618 938 644 929 675Z" opacity=".38"/>
+</g>
+<g fill="#d67a3a"><rect x="235" y="588" width="45" height="15" rx="8" transform="rotate(-25 235 588)"/></g>
+<g opacity=".8" fill="#ffd18e"><circle cx="165" cy="205" r="7"/><circle cx="1035" cy="205" r="7"/><circle cx="328" cy="165" r="7"/><circle cx="872" cy="165" r="7"/></g>
+</svg>
