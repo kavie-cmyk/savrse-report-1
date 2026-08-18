@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Flow Desk concept illustration</title>
+<desc id="d">Tactile spatial optimization game concept in a compact work area. The player uses two hands to place and rotate objects under multiple competing constraints, with several valid layouts.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1420"/><stop offset="1" stop-color="#18283a"/></linearGradient>
+  <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#27384a"/><stop offset="1" stop-color="#172431"/></linearGradient>
+  <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#cad5df"/><stop offset="1" stop-color="#6e8196"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<ellipse cx="600" cy="380" rx="520" ry="260" fill="#09111b" opacity=".45"/>
+<path d="M175 130 H1025 L1110 585 H90Z" fill="url(#desk)" stroke="#65788d" stroke-width="5"/>
+<path d="M230 180 H970 L1020 535 H180Z" fill="#0f1b28" stroke="#3e5266" stroke-width="3"/>
+<g opacity=".42" fill="none" stroke-width="5" stroke-dasharray="14 12">
+ <path d="M280 245 H480 V410 H280Z" stroke="#4ba5ff"/>
+ <circle cx="690" cy="330" r="105" stroke="#4bd193"/>
+ <path d="M770 210 H930 V455 H770Z" stroke="#f0a24a"/>
+</g>
+<g opacity=".3" stroke="#88a0b7" stroke-width="2"><path d="M235 310H965M250 390H980M270 470H995"/><path d="M370 195V520M530 195V525M690 195V530M850 195V535"/></g>
+<g filter="url(#glow)">
+ <g transform="translate(315 270)"><rect width="110" height="82" rx="14" fill="#245b8f" stroke="#72b8ff" stroke-width="4"/><path d="M18 22H92M18 42H68" stroke="#b9dbff" stroke-width="6" stroke-linecap="round"/></g>
+ <g transform="translate(475 380)"><rect width="120" height="70" rx="18" fill="#694b8e" stroke="#bf8cff" stroke-width="4"/><circle cx="32" cy="35" r="13" fill="#d8baff"/></g>
+ <g transform="translate(620 265)"><circle cx="60" cy="60" r="60" fill="#1f6a52" stroke="#67e0a8" stroke-width="4"/><circle cx="60" cy="60" r="23" fill="#9ef0c5"/></g>
+ <g transform="translate(800 315)"><path d="M0 75 45 0 90 75Z" fill="#925f25" stroke="#ffc069" stroke-width="4"/><circle cx="45" cy="52" r="12" fill="#ffe0a7"/></g>
+ <g transform="translate(535 205)"><rect width="78" height="78" rx="12" fill="#27688e" stroke="#65d4ff" stroke-width="4"/><path d="M15 60 39 20 63 60Z" fill="#8be6ff"/></g>
+</g>
+<g fill="none" stroke="#8bb7dc" stroke-width="4" opacity=".8">
+ <path d="M345 380 C420 330 500 320 565 335"/>
+ <path d="M565 335 C640 355 705 395 790 430"/>
+ <path d="M560 335 C610 290 675 240 780 220"/>
+</g>
+<g fill="#8bb7dc"><path d="M548 324 574 335 552 350Z"/><path d="M770 418 798 431 775 445Z"/><path d="M760 207 789 218 766 234Z"/></g>
+<g fill="url(#hand)" stroke="#314356" stroke-width="5">
+ <path d="M155 675 C168 604 203 535 274 493 C309 472 339 483 340 512 C340 542 300 562 276 591 C255 617 255 646 265 675Z"/>
+ <path d="M1045 675 C1032 604 997 535 926 493 C891 472 861 483 860 512 C860 542 900 562 924 591 C945 617 945 646 935 675Z"/>
+</g>
+<g fill="#ef7d3b"><rect x="235" y="560" width="44" height="15" rx="8" transform="rotate(-28 235 560)"/><rect x="921" y="560" width="44" height="15" rx="8" transform="rotate(28 921 560)"/></g>
+<g opacity=".7"><circle cx="320" cy="225" r="8" fill="#4ba5ff"/><circle cx="712" cy="230" r="8" fill="#4bd193"/><circle cx="900" cy="240" r="8" fill="#f0a24a"/></g>
+</svg>
