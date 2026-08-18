@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Kinetic Switchyard high-intensity mastery concept illustration</title>
+<desc id="d">First-person VR factory scene at higher intensity with multiple package flows, several routing switches, congestion pressure and coordinated two-hand actions.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111b"/><stop offset=".55" stop-color="#172536"/><stop offset="1" stop-color="#0b1520"/></linearGradient>
+  <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8d3de"/><stop offset="1" stop-color="#64778d"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<path d="M0 675V520L390 250H810L1200 520V675Z" fill="#14202c"/>
+<g opacity=".25" stroke="#8aa0b5" stroke-width="2"><path d="M150 675 465 250M330 675 530 250M870 675 670 250M1050 675 735 250"/><path d="M170 580H1030M260 500H940M350 425H850M435 355H765"/></g>
+<g fill="none" stroke="#5f7082" stroke-width="30" stroke-linecap="round">
+ <path d="M20 505 C170 485 285 445 405 365"/>
+ <path d="M15 585 C185 565 325 505 475 405"/>
+ <path d="M405 365 C575 315 720 300 1175 300"/>
+ <path d="M475 405 C650 405 790 420 1180 505"/>
+ <path d="M405 365 C520 455 650 520 980 590"/>
+ <path d="M475 405 C600 335 720 255 985 180"/>
+</g>
+<g fill="none" stroke="#4da7ff" stroke-width="7" stroke-linecap="round" filter="url(#glow)">
+ <path d="M35 505 C180 485 285 445 390 375"/>
+ <path d="M420 367 C590 320 720 305 1120 305"/>
+ <path d="M35 585 C200 565 325 510 458 420"/>
+</g>
+<g fill="none" stroke="#ff6b59" stroke-width="7" stroke-linecap="round" filter="url(#glow)"><path d="M490 414 C650 420 800 440 1115 510"/><path d="M422 380 C540 470 665 525 925 580"/></g>
+<g>
+ <g transform="translate(405 365)"><circle r="43" fill="#0d1622" stroke="#b6c3d1" stroke-width="4"/><line x1="0" y1="0" x2="30" y2="-24" stroke="#f08b4f" stroke-width="10" stroke-linecap="round"/><circle cx="32" cy="-26" r="9" fill="#ffc49a"/></g>
+ <g transform="translate(475 405)"><circle r="43" fill="#0d1622" stroke="#b6c3d1" stroke-width="4"/><line x1="0" y1="0" x2="-27" y2="-27" stroke="#f08b4f" stroke-width="10" stroke-linecap="round"/><circle cx="-29" cy="-29" r="9" fill="#ffc49a"/></g>
+ <g transform="translate(720 320)"><circle r="36" fill="#0d1622" stroke="#9dadbd" stroke-width="4"/><line x1="0" y1="0" x2="27" y2="15" stroke="#f08b4f" stroke-width="9" stroke-linecap="round"/></g>
+ <g transform="translate(755 455)"><circle r="36" fill="#0d1622" stroke="#9dadbd" stroke-width="4"/><line x1="0" y1="0" x2="-27" y2="16" stroke="#f08b4f" stroke-width="9" stroke-linecap="round"/></g>
+</g>
+<g stroke-width="3">
+ <g fill="#3b82f6" stroke="#d6e9ff"><rect x="175" y="457" width="50" height="40" rx="7"/><rect x="610" y="294" width="50" height="40" rx="7"/><rect x="850" y="286" width="50" height="40" rx="7"/></g>
+ <g fill="#ef6b52" stroke="#ffd4cb"><rect x="250" y="520" width="50" height="40" rx="7"/><rect x="640" y="430" width="50" height="40" rx="7"/><rect x="935" y="475" width="50" height="40" rx="7"/></g>
+ <g fill="#f0a33f" stroke="#ffe5b9"><rect x="320" y="404" width="50" height="40" rx="7"/><rect x="805" y="540" width="50" height="40" rx="7"/><rect x="1010" y="290" width="50" height="40" rx="7"/></g>
+</g>
+<g transform="translate(598 515)" filter="url(#glow)"><rect x="-96" y="0" width="192" height="52" rx="26" fill="#6e281d" stroke="#f08a68" stroke-width="3"/><circle cx="-54" cy="26" r="9" fill="#ff5d4d"/><circle cx="-18" cy="26" r="9" fill="#ff8a53"/><circle cx="18" cy="26" r="9" fill="#ffc75d"/><circle cx="54" cy="26" r="9" fill="#ff5d4d"/></g>
+<g fill="url(#hand)" stroke="#314356" stroke-width="5">
+ <path d="M175 675 C190 610 228 558 285 525 C317 506 344 518 341 544 C337 570 305 589 281 612 C267 628 269 650 277 675Z"/>
+ <path d="M1025 675 C1010 610 972 558 915 525 C883 506 856 518 859 544 C863 570 895 589 919 612 C933 628 931 650 923 675Z"/>
+</g>
+<g fill="#ef7d3b"><rect x="248" y="590" width="46" height="16" rx="8" transform="rotate(-22 248 590)"/><rect x="906" y="590" width="46" height="16" rx="8" transform="rotate(22 906 590)"/></g>
+<g opacity=".9" filter="url(#glow)"><circle cx="1040" cy="160" r="12" fill="#ff5c4d"/><circle cx="1068" cy="160" r="12" fill="#ffbb55"/><circle cx="1096" cy="160" r="12" fill="#ff5c4d"/></g>
+</svg>
