@@ -4,444 +4,318 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Savrse 2026–2029 — CEO Interactive Visual Brief</title>
-<meta name="description" content="CEO-facing interactive visual strategy brief for Savrse — SAVA Meta, condensed from the P24 v1.5 authoritative research report.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<title>Savrse 2026–2029 — CEO Decision Brief</title>
+<meta name="description" content="CEO-facing decision brief for Savrse — SAVA Meta. Plain-language comprehension pass derived from the authoritative P24 report without changing strategy or decision state.">
+<style>
+:root{
+  --ink:#0f172a;--muted:#5f6b7a;--soft:#f6f8fb;--paper:#ffffff;--line:#dde3ea;--line2:#c8d1dc;
+  --blue:#255ee8;--blue2:#1747b8;--blueSoft:#eef4ff;--navy:#172033;--green:#13795b;--greenSoft:#edf9f4;
+  --amber:#a85b00;--amberSoft:#fff8e8;--red:#b42318;--redSoft:#fff2f0;--radius:18px;--max:1180px;
+  --shadow:0 16px 45px -30px rgba(15,23,42,.35);--font:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:72px} body{margin:0;font-family:var(--font);color:var(--ink);background:#fff;line-height:1.58;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none} button{font:inherit} .skip-link{position:fixed;left:14px;top:-70px;z-index:300;background:#fff;border:2px solid var(--blue);padding:10px 14px;border-radius:10px}.skip-link:focus{top:10px}
+.topbar{position:sticky;top:0;z-index:120;height:64px;display:flex;align-items:center;gap:22px;padding:0 max(18px,calc((100vw - var(--max))/2));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;min-width:max-content}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--navy);color:#fff;font-weight:900}.brand b{display:block;font-size:12px;letter-spacing:.11em}.brand small{display:block;font-size:9px;color:var(--muted)}
+.nav-toggle{display:none;margin-left:auto;border:1px solid var(--line2);background:#fff;padding:8px 10px;border-radius:9px;font-weight:700}.topbar nav{margin:auto;display:flex;gap:17px}.topbar nav a{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;padding:7px 0}.topbar nav a:hover,.topbar nav a.active{color:var(--blue);border-color:var(--blue)}.top-report{font-size:12px;font-weight:800;color:var(--blue);white-space:nowrap}
+.section{padding:88px max(20px,calc((100vw - var(--max))/2));position:relative}.section.soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.section.dark{background:var(--navy);color:#fff}.wrap{max-width:var(--max);margin:auto}.eyebrow{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--blue);text-transform:uppercase}.dark .eyebrow{color:#8db0ff}.section-head{display:grid;grid-template-columns:54px 1fr;gap:22px;margin-bottom:36px}.section-no{font-size:12px;font-weight:900;color:#9aa5b3;border-top:2px solid var(--line2);padding-top:7px}.section h2{font-size:clamp(31px,4vw,49px);line-height:1.05;letter-spacing:-.035em;margin:7px 0 0}.section h2 span{color:var(--blue)}.dark h2 span{color:#8db0ff}.section-intro{max-width:900px;color:var(--muted);font-size:17px;margin:14px 0 0}.dark .section-intro{color:#c8d1df}
+.hero{min-height:calc(100vh - 64px);display:flex;align-items:center;padding-top:55px;padding-bottom:55px;background:radial-gradient(circle at 82% 0,rgba(37,94,232,.11),transparent 38%),linear-gradient(180deg,#fff,#f8fafc)}.hero .wrap{width:100%}.hero h1{font-size:clamp(42px,6.2vw,76px);line-height:.98;letter-spacing:-.047em;margin:14px 0 20px;max-width:1020px}.hero h1 span{color:var(--blue)}.hero-lead{font-size:clamp(18px,2vw,23px);max-width:960px;margin:0 0 26px;color:#465466}.hero-decision{font-size:15px;font-weight:800;padding:14px 16px;border-left:4px solid var(--blue);background:#fff;border-radius:0 12px 12px 0;box-shadow:var(--shadow);max-width:920px}
+.hero-paths{display:grid;grid-template-columns:1.15fr 1fr .72fr;gap:14px;margin-top:24px}.hero-path{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff;box-shadow:var(--shadow)}.hero-path.b2c{background:var(--navy);color:#fff;border-color:var(--navy)}.hero-path.pause{background:var(--amberSoft);border-color:#f1d59c}.path-label{font-size:10px;letter-spacing:.12em;font-weight:900;color:var(--blue);text-transform:uppercase}.hero-path.b2c .path-label{color:#8db0ff}.hero-path.pause .path-label{color:var(--amber)}.hero-path h3{font-size:20px;margin:8px 0 12px}.hero-path p{font-size:13px;color:var(--muted);margin:0}.hero-path.b2c p{color:#c9d3e2}.hero-solutions{display:grid;gap:8px;margin-top:12px}.hero-solutions span{display:block;padding:9px 11px;border-radius:10px;background:var(--blueSoft);font-size:12px;font-weight:750;color:#17345e}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line2);background:#fff;border-radius:10px;padding:10px 15px;font-size:12px;font-weight:800;cursor:pointer}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary:hover{background:var(--blue2);color:#fff}
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.decision-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;box-shadow:var(--shadow)}.decision-card.approve{border-top:4px solid var(--green)}.decision-card.defer{border-top:4px solid var(--red)}.decision-card h3{font-size:20px;margin:0 0 12px}.decision-card ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}.decision-card li{position:relative;padding-left:25px;font-size:14px}.decision-card.approve li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}.decision-card.defer li:before{content:"—";position:absolute;left:2px;color:var(--red);font-weight:900}.decision-note{margin-top:18px;padding:16px 18px;border-radius:13px;background:var(--amberSoft);border:1px solid #efd293;color:#70450c;font-size:13px}
+.meaning-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}.meaning-card{padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:#fff}.meaning-card.known{background:var(--greenSoft);border-color:#bfe6d6}.meaning-card.unknown{background:var(--amberSoft);border-color:#efd293}.meaning-card h3{margin:0 0 8px;font-size:19px}.meaning-card p{margin:0;color:#435165}.metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.metric{padding:18px;border:1px solid var(--line);border-radius:14px;background:#fff;min-height:126px}.metric strong{display:block;font-size:31px;letter-spacing:-.04em;color:var(--blue)}.metric span{display:block;font-size:12.5px;font-weight:800;margin-top:7px}.metric small{display:block;font-size:10.5px;color:var(--muted);margin-top:4px}
+details.disclosure{margin-top:18px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:0 18px}details.disclosure>summary{cursor:pointer;font-size:13px;font-weight:850;padding:15px 0;color:#263448}details.disclosure[open]>summary{color:var(--blue)}.detail-body{padding:0 0 18px;color:var(--muted);font-size:13px}.detail-body ul{margin:8px 0 0;padding-left:20px}.detail-body p{margin:8px 0}.formal{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#536075;background:#f3f5f8;border-radius:7px;padding:2px 5px}
+.sell-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.sell-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff}.sell-card.secondary{grid-column:1/-1;background:#f9fafb}.sell-role{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}.sell-card.secondary .sell-role{color:#7d5a17}.sell-card h3{font-size:24px;margin:8px 0 10px}.sell-card>p{margin:0;color:var(--muted)}.buy-box{margin-top:17px;padding:16px;border-radius:13px;background:var(--blueSoft);border:1px solid #cfe0ff}.buy-box b{display:block;font-size:12px;color:#184277;margin-bottom:5px}.buy-box p{margin:0;font-size:13px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.fact{padding:12px 13px;border:1px solid var(--line);border-radius:11px}.fact b{display:block;font-size:11px;color:#536075}.fact span{display:block;font-size:12.5px;margin-top:3px}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.reason-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:21px}.reason-card h3{margin:0 0 8px;font-size:17px}.reason-card p{margin:0;color:var(--muted);font-size:13px}.reason-card small{display:block;color:#8993a0;margin-top:10px;font-size:10.5px}
+.b2c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:22px}.b2c-reason{padding:20px;border-radius:14px;border:1px solid var(--line);background:#fff}.b2c-reason b{display:block;font-size:14px}.b2c-reason p{font-size:12.5px;color:var(--muted);margin:6px 0 0}.boundary-strip{margin-top:18px;padding:16px 18px;border-radius:13px;background:var(--navy);color:#fff;font-size:13px}.boundary-strip b{color:#9bb9ff}
+.kinetic{background:#f2efe8}.kinetic .section-head{margin-bottom:20px}.kinetic-one{font-size:clamp(20px,2.3vw,28px);max-width:1020px;line-height:1.35;margin:10px 0 0}.theme-note{display:flex;gap:14px;align-items:flex-start;margin:22px 0;padding:16px 18px;border-radius:13px;background:#fff8ea;border:1px solid #edd096}.theme-pill{white-space:nowrap;font-size:10px;font-weight:900;letter-spacing:.1em;color:#9a5200}.theme-note div{font-size:13px;color:#5b5f66}.theme-note b{color:#2e3034}.kinetic-simple{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.simple-card{background:#fff;border:1px solid #ded9ce;border-radius:14px;padding:18px}.simple-card span{font-size:10px;font-weight:900;color:#c15c2b}.simple-card h3{font-size:15px;margin:6px 0}.simple-card p{font-size:12.5px;color:#5d6671;margin:0}
+.factory-wrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:22px;margin-top:22px}.walkthrough{background:#fff;border:1px solid #ded9ce;border-radius:18px;padding:24px}.walkthrough>span{font-size:10px;font-weight:900;letter-spacing:.1em;color:#c15c2b}.walkthrough h3{font-size:22px;margin:7px 0 14px}.walkthrough ol{margin:0;padding:0;list-style:none;display:grid;gap:10px}.walkthrough li{display:grid;grid-template-columns:56px 1fr;gap:10px;font-size:12.5px}.walkthrough li b{color:#c15c2b}.factory-demo{background:#181d25;border-radius:18px;padding:14px;color:#fff;min-width:0}.factory-hud{display:flex;justify-content:space-between;gap:12px;padding:7px 7px 12px;font-size:10px;letter-spacing:.07em;color:#cbd5df}.factory-hud b{text-align:right;color:#fff}.factory-svg{width:100%;display:block;background:#202834;border-radius:14px}.factory-floor{fill:#273240;stroke:#3d4a5a}.machine rect{fill:#101722;stroke:#6d7b8e;stroke-width:2}.machine text{fill:#dbe6f1;font-size:13px;font-weight:800}.machine.target rect{stroke:#4aa7ff;stroke-width:3}.belt{fill:none;stroke:#657287;stroke-width:17;stroke-linecap:round}.belt.active{stroke:#4aa7ff}.junction-ring{fill:#151d29;stroke:#9ba7b5;stroke-width:3}.switch-handle circle{fill:#f0924f}.switch-handle line{stroke:#ffd4ae;stroke-width:7;stroke-linecap:round}.package-blue rect{fill:#3b82f6;stroke:#cfe1ff;stroke-width:2}.package-blue text{fill:#fff;font-weight:900;font-size:14px}.belt-label{fill:#9eabb9;font-size:11px}.factory-controls{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;margin-top:10px}.factory-instruction{font-size:11.5px;color:#d7dee8}.factory-action,.factory-reset{border:0;border-radius:9px;padding:10px 12px;font-size:11px;font-weight:850;cursor:pointer}.factory-action{background:#e46e37;color:#fff}.factory-action:disabled{background:#6f7884}.factory-reset{background:#e9edf2;color:#27303a}.factory-result{margin-top:10px;padding:11px 12px;border-radius:10px;background:#eef4ff;color:#17436f;display:flex;justify-content:space-between;gap:12px;font-size:11px}.factory-result.success{background:#e9f7ef;color:#176143}.mastery{display:grid;grid-template-columns:.7fr 1.3fr;gap:18px;background:#fff;border:1px solid #ded9ce;border-radius:18px;padding:24px;margin-top:20px}.mastery h3{font-size:20px;margin:0 0 8px}.mastery p{font-size:13px;color:#606a76;margin:0}.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.ladder div{background:#f2efe8;border-radius:12px;padding:13px;min-height:104px}.ladder b{display:block;font-size:10px;color:#c15c2b}.ladder span{display:block;font-size:12.5px;font-weight:800;margin-top:5px}.ladder small{font-size:10.5px;color:#6f7780}.kinetic-warning{margin-top:18px;padding:16px 18px;background:#fff;border-radius:13px;border:1px solid #ded9ce;font-size:13px}
+.funnel{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0 22px}.funnel span,.funnel strong{padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:12px}.funnel strong{background:var(--blue);border-color:var(--blue);color:#fff}.funnel i{font-style:normal;color:var(--blue);font-weight:900}.concept-defs{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:15px}.concept-def{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px}.concept-def b{display:block;font-size:15px}.concept-def p{font-size:12.5px;color:var(--muted);margin:7px 0 0}.rank-badge{display:inline-block;margin-bottom:7px;padding:4px 7px;border-radius:999px;background:var(--blueSoft);color:var(--blue);font-size:10px;font-weight:900}.compare-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:19px}.compare-card.first{border-top:4px solid var(--blue)}.compare-card h3{margin:0 0 12px;font-size:16px}.compare-card dl{margin:0;display:grid;gap:10px}.compare-card dl div{display:grid;grid-template-columns:1fr auto;gap:9px;border-top:1px solid var(--line);padding-top:9px}.compare-card dt{font-size:11.5px;color:var(--muted)}.compare-card dd{margin:0;font-size:11.5px;font-weight:850;text-align:right}.compare-risk{display:block!important}.compare-risk dd{text-align:left;margin-top:4px;color:#6b4a0a;font-weight:650}.watch-line{margin-top:14px;font-size:12px;color:var(--muted)}
+.failure-test{display:grid;grid-template-columns:1fr 80px 1fr;gap:14px;align-items:center;margin-bottom:20px}.test-box{border:1px solid var(--line);border-radius:16px;background:#fff;padding:22px;text-align:center}.test-box b{display:block;font-size:18px}.test-box span{font-size:11px;color:var(--muted)}.vs{text-align:center;font-weight:900;color:var(--red)}.test-result{grid-column:1/-1;padding:14px 16px;background:var(--redSoft);border:1px solid #f2c6c2;border-radius:12px;text-align:center;color:#762d28;font-size:13px}.kill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.kill-grid span{padding:13px;border:1px solid var(--line);border-radius:11px;background:#fff;font-size:12.5px}
+.music-status{padding:22px 24px;border-radius:16px;background:var(--amberSoft);border:1px solid #efd293;margin-bottom:18px}.music-status h3{margin:0;font-size:24px;color:#7c4c0a}.music-status p{margin:7px 0 0;color:#6b583b}.music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.music-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:19px}.music-card h3{font-size:15px;margin:0 0 10px}.music-card ul{margin:0;padding-left:18px}.music-card li{font-size:12.5px;color:var(--muted);margin:6px 0}
+.month-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.month-card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:25px}.month-card h3{font-size:22px;margin:0 0 6px}.month-card>p{font-size:13px;color:var(--muted);margin:0 0 14px}.month-card ol{margin:0;padding-left:21px}.month-card li{font-size:13px;margin:8px 0}.return-box{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.return-item{padding:17px;border-radius:13px;background:var(--blueSoft);border:1px solid #cfdefb;font-size:12.5px}.return-item b{display:block;color:#17447c;margin-bottom:5px}
+.formal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.formal-card{border:1px solid var(--line);border-radius:13px;background:#fff;padding:17px}.formal-card b{display:block;font-size:13px}.formal-card p{font-size:11.5px;color:var(--muted);margin:6px 0 0}.source-map{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.source-map span{padding:11px;border:1px solid var(--line);border-radius:9px;background:#f8fafc;font-size:11px;text-align:center}.source-map b{display:block;font-size:18px;color:var(--blue)}
+footer{padding:28px max(20px,calc((100vw - var(--max))/2));border-top:1px solid var(--line);background:#fff;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer b{color:var(--ink)}
+@media(max-width:1100px){.top-report{display:none}.topbar nav{gap:11px}.topbar nav a{font-size:11px}.metric-grid{grid-template-columns:repeat(3,1fr)}.hero-paths{grid-template-columns:1fr 1fr}.hero-path.pause{grid-column:1/-1}.factory-wrap{grid-template-columns:1fr}.kinetic-simple{grid-template-columns:repeat(2,1fr)}.mastery{grid-template-columns:1fr}.formal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){html{scroll-padding-top:58px}.topbar{height:56px;padding:0 14px}.brand small{display:none}.nav-toggle{display:block}.topbar nav{position:absolute;top:56px;left:0;right:0;display:none;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px 14px;box-shadow:var(--shadow)}.topbar nav.open{display:flex}.topbar nav a{padding:10px 5px;border-bottom:0}.section{padding:65px 18px}.section-head{grid-template-columns:1fr;gap:8px}.section-no{display:none}.hero{min-height:auto;padding-top:55px}.hero-paths,.decision-grid,.meaning-grid,.sell-grid,.month-grid{grid-template-columns:1fr}.sell-card.secondary{grid-column:auto}.reason-grid,.b2c-grid,.concept-defs,.compare-cards,.music-grid,.kill-grid{grid-template-columns:1fr 1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.failure-test{grid-template-columns:1fr}.vs{padding:0}.test-result{grid-column:auto}.return-box{grid-template-columns:1fr}.source-map{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.section{padding:56px 14px}.hero h1{font-size:40px}.hero-lead{font-size:16px}.hero-paths,.reason-grid,.b2c-grid,.kinetic-simple,.concept-defs,.compare-cards,.music-grid,.kill-grid,.formal-grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.factory-controls{grid-template-columns:1fr}.factory-hud,.factory-result,.theme-note{flex-direction:column}.factory-hud b{text-align:left}.walkthrough li{grid-template-columns:48px 1fr}.ladder{grid-template-columns:1fr 1fr}.hero-decision{font-size:13px}.source-map{grid-template-columns:1fr 1fr}.section h2{font-size:31px}}
+@media(max-width:390px){.section{padding-left:12px;padding-right:12px}.hero h1{font-size:35px}.hero-path,.decision-card,.sell-card,.month-card{padding:19px}.ladder{grid-template-columns:1fr}.source-map{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
 <header class="topbar">
-  <a class="brand" href="#answer"><span class="brand-mark">S</span><span><b>SAVRSE</b><small>CEO VISUAL BRIEF · 2026–2029</small></span></a>
+  <a class="brand" href="#conclusion"><span class="brand-mark">S</span><span><b>SAVRSE</b><small>CEO DECISION BRIEF · 2026–2029</small></span></a>
   <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
   <nav id="main-nav" aria-label="Điều hướng chính">
-    <a href="#answer">Kết luận</a><a href="#evidence">Thị trường</a><a href="#track-a">Hướng kinh doanh</a><a href="#b2c">B2C</a><a href="#kinetic">Kinetic</a><a href="#music-world">Music World</a><a href="#roadmap">Roadmap</a><a href="#decisions">Quyết định CEO</a>
+    <a href="#conclusion">Kết luận</a><a href="#approve">Phê duyệt</a><a href="#track-a">Bán gì</a><a href="#b2c">B2C</a><a href="#kinetic">Kinetic</a><a href="#music-world">Music World</a><a href="#six-months">6 tháng</a><a href="#details">Chi tiết</a>
   </nav>
-  <a class="report-link top-report-link" data-full-report href="#">Báo cáo đầy đủ ↗</a>
+  <a class="top-report" href="./full-report/index.html">Báo cáo đầy đủ ↗</a>
 </header>
 <main id="main">
-
-<section id="answer" class="section hero-section" data-section="1">
-  <div class="eyebrow">KẾT LUẬN ĐIỀU HÀNH · 18/08/2026</div>
-  <h1>SAVRSE NÊN TRỞ THÀNH GÌ<br><span>TRONG 2026–2029?</span></h1>
-  <p class="lead">Một kiến trúc <b>hai nhánh</b>: Nhánh A tạo bằng chứng thương mại qua hợp đồng; Nhánh B tạo bằng chứng sản phẩm trực tiếp từ người chơi.</p>
-  <div class="two-track hero-architecture" data-visual="two-track">
-    <article class="track-card track-a">
-      <div class="track-label">TRACK A · CONTRACT-LED B2B/B2G</div>
-      <h2>Bán outcome cụ thể</h2>
-      <div class="pillar primary"><span>01</span><div><b>Training / Mission Simulation</b><small>Trụ cột chính</small></div></div>
-      <div class="pillar primary"><span>02</span><div><b>Web Spatial 3D + Public/Heritage</b><small>Trụ cột chính</small></div></div>
-      <div class="pillar secondary"><span>03</span><div><b>Operational / Facility 3D</b><small>Luận điểm thứ cấp · theo tài khoản</small></div></div>
-      <p class="micro">Mục tiêu: paid proof → repeat/reuse → chuẩn hóa dọc khi bằng chứng cho phép.</p>
-    </article>
-    <div class="architecture-bridge" aria-hidden="true"><span>SHARED CAPABILITY</span><small>chỉ tái sử dụng khi giảm thời gian / lỗi / chi phí và quyền sử dụng rõ</small></div>
-    <article class="track-card track-b">
-      <div class="track-label">TRACK B · PRODUCT-LED B2C</div>
-      <h2>Premium Replayable VR Game</h2>
-      <div class="kinetic-lockup"><span>#1</span><div><b>KINETIC SWITCHYARD</b><small>FIRST PROTOTYPE PRIORITY</small></div></div>
-      <p class="micro">Mục tiêu: kiểm chứng vòng lặp chơi, WHY‑VR, retry, skill, payment/product behavior.</p>
-      <div class="state-row"><span class="state hypothesis">HYPOTHESIS</span><span class="state not-authorized">FULL PRODUCTION: NOT AUTHORIZED</span></div>
-    </article>
-  </div>
-  <div class="hero-caveat"><b>Ranh giới:</b> đây là định hướng kiểm chứng và thứ tự ưu tiên — <b>không phải phê duyệt scale toàn bộ</b>.</div>
-  <div class="hero-actions"><a class="btn primary" href="#decisions">Xem quyết định CEO</a><a class="btn" data-full-report href="#">Đọc báo cáo đầy đủ ↗</a></div>
-</section>
-
-<section id="evidence" class="section dark-section" data-section="2">
-  <div class="section-head"><span class="section-no">02</span><div><div class="eyebrow">WHAT THE RESEARCH ACTUALLY FOUND</div><h2>Thị trường có bằng chứng mua.<br><span>SAVA-specific proof vẫn thiếu.</span></h2></div></div>
-  <div class="metric-grid" data-visual="evidence-snapshot">
-    <article class="metric"><strong>42</strong><span>cơ hội đã nghiên cứu</span></article>
-    <article class="metric"><strong>39</strong><span>đạt mức bằng chứng thị trường đối chiếu</span><small>+ 3 định hướng; E3/E4 chưa đạt</small></article>
-    <article class="metric"><strong>15/42</strong><span>có bằng chứng spend / procurement</span></article>
-    <article class="metric"><strong>20/42</strong><span>có bằng chứng pricing</span></article>
-    <article class="metric"><strong>7/42</strong><span>có bằng chứng repeat / renewal</span></article>
-    <article class="metric"><strong>51</strong><span>vị trí quản trị/chấm điểm</span><small>2 full · 30 provisional · 19 chưa đủ để chấm đầy đủ</small></article>
-  </div>
-  <div class="semantic-firewall" data-visual="semantic-firewall"><span>Hợp đồng / award / list price bên ngoài</span><b>≠</b><span>SAVA revenue / margin / WTP / CAC-LTV</span></div>
-  <details class="evidence-drawer"><summary>Xem bằng chứng và giới hạn</summary><div class="drawer-grid">
-    <div><h4>Ví dụ có hành vi mua thật</h4><ul><li>UCLan/Labster: £180,000 — contract value.</li><li>Defra: £118,327 — award/procurement value.</li><li>Coventry/XVR: £55,661 — two-year licence renewal contract value.</li><li>Derby: £65,512 — web geospatial 3D contract.</li></ul></div>
-    <div><h4>Giới hạn bắt buộc</h4><ul><li>Contract value ≠ cash collection.</li><li>Award ≠ realized SAVA revenue.</li><li>Framework ceiling ≠ realized call-off.</li><li>Customer validation = insufficient; E3 chưa đạt.</li></ul></div>
-  </div></details>
-</section>
-
-<section id="value" class="section" data-section="3">
-  <div class="section-head"><span class="section-no">03</span><div><div class="eyebrow">WHERE VALUE ACTUALLY SITS</div><h2>Khách hàng mua <span>outcome cụ thể</span>, không mua “metaverse” như một khái niệm.</h2></div></div>
-  <div class="value-stack" data-visual="value-stack">
-    <div class="value-tier high"><div class="tier-label">GIÁ TRỊ CAO HƠN TRONG MẪU BẰNG CHỨNG</div><div class="chip-row"><span>Domain workflow</span><span>Nội dung chuyên ngành</span><span>Integration</span><span>Độ tin cậy triển khai</span><span>Commissioned outcome</span><span>Buyer relationship</span><span>Support / delivery</span></div></div>
-    <div class="value-arrow">↑ Outcome-specific · buyer-linked</div>
-    <div class="value-tier low"><div class="tier-label">SỨC ÉP HÀNG HÓA HÓA / INCUMBENT CAPTURE CAO HƠN</div><div class="chip-row"><span>Generic viewer</span><span>Basic capture</span><span>Generic AI 3D</span><span>Avatar / NPC middleware</span><span>Platform infrastructure</span></div></div>
-  </div>
-  <div class="split-insight" data-visual="project-productization">
-    <div><b>PROJECT ≠ tự động xấu</b><p>Dự án có thể là cơ chế học có trả tiền.</p></div><div class="flow-inline"><span>Paid project</span><i>→</i><span>Pattern lặp lại</span><i>→</i><span>Reusable core</span><i>→</i><span>Lower marginal effort</span><i>→</i><span>Vertical productization?</span></div>
-  </div>
-  <p class="caveat">Đây là mẫu bằng chứng của báo cáo P24, không phải một “quy luật ngành” tuyệt đối.</p>
-</section>
-
-<section id="why-two" class="section soft-section" data-section="4">
-  <div class="section-head"><span class="section-no">04</span><div><div class="eyebrow">WHY TWO TRACKS</div><h2>Hai nhánh giải <span>hai loại uncertainty khác nhau.</span></h2></div></div>
-  <div class="toggle-row" role="tablist" aria-label="So sánh hai nhánh"><button class="track-toggle active" data-track="commercial" role="tab" aria-selected="true">TRACK A · Commercial learning</button><button class="track-toggle" data-track="product" role="tab" aria-selected="false">TRACK B · Product learning</button></div>
-  <div class="learning-panel active" data-panel="commercial" data-visual="commercial-learning">
-    <div class="learning-flow"><span>Account / RFP / Procurement</span><i>→</i><span>Buyer</span><i>→</i><span>Partner khi cần</span><i>→</i><span>Contract</span><i>→</i><span>Delivery</span><i>→</i><span>Repeat / reuse evidence</span></div>
-    <p><b>Câu hỏi chính:</b> ai trả tiền, mua object gì, delivery có lặp lại và chuẩn hóa được không?</p>
-  </div>
-  <div class="learning-panel" data-panel="product" data-visual="product-learning">
-    <div class="learning-flow"><span>VR Storefront</span><i>→</i><span>Discovery</span><i>→</i><span>Purchase / install</span><i>→</i><span>Gameplay</span><i>→</i><span>Retry / return</span><i>→</i><span>Iterate / stop / scale</span></div>
-    <p><b>Câu hỏi chính:</b> người chơi có hiểu, muốn chơi lại, trả tiền và tạo hành vi sản phẩm đủ mạnh không?</p>
-  </div>
-  <div class="callout"><b>Không được suy thay cho nhau:</b> bằng chứng hợp đồng B2B không chứng minh B2C PMF; hành vi game B2C không chứng minh khả năng thắng procurement B2B/B2G.</div>
-</section>
-
-<section id="track-a" class="section" data-section="5">
-  <div class="section-head"><span class="section-no">05</span><div><div class="eyebrow">TRACK A — WHERE TO SELL</div><h2>Hai trụ cột chính. <span>Một luận điểm thứ cấp.</span></h2></div></div>
-  <div class="pillar-cards">
-    <article class="direction-card primary-direction" data-visual="training-pillar">
-      <div class="direction-top"><span class="role">PRIMARY PILLAR 01</span><h3>Training / Mission Simulation</h3><p>Giải quyết bài toán đào tạo cụ thể bằng software/content/project có biên giới thương mại rõ.</p></div>
-      <dl class="fact-list"><div><dt>Buyer / payer</dt><dd>Trường/đơn vị đào tạo, cơ quan công, tổ chức chuyên môn.</dd></div><div><dt>Commercial object</dt><dd>Software licence, virtual lab/content, simulation project, configuration & support.</dd></div><div><dt>Tín hiệu mua</dt><dd>Labster multi-year contract; Defra procurement; XVR licence renewal.</dd></div><div><dt>Risk</dt><dd>Domain expertise, certification, hardware/hands-on substitutes, incumbents.</dd></div></dl>
-      <div class="mini-architecture"><span>Reusable runtime</span><i>+</i><span>Scenario/config</span><i>+</i><span>Domain content/partner</span><i>+</i><span>Assessment/support</span></div>
-      <details><summary>Xem bằng chứng</summary><p>UCLan/Labster £180,000 contract value; Defra £118,327 award/procurement value; Coventry/XVR £55,661 two-year renewal contract value. Các giá trị giữ nguyên semantic và không phải SAVA price.</p></details>
-    </article>
-    <article class="direction-card primary-direction" data-visual="web3d-pillar">
-      <div class="direction-top"><span class="role">PRIMARY PILLAR 02</span><h3>Web Spatial 3D + Public / Heritage</h3><p>Tổ chức đặt hàng outcome web 3D/công cộng; công chúng có thể là người dùng cuối nhưng không nhất thiết là payer.</p></div>
-      <dl class="fact-list"><div><dt>Buyer / payer</dt><dd>Cơ quan công, bảo tàng/di sản, destination/organization.</dd></div><div><dt>Commercial object</dt><dd>Commissioned web spatial 3D/public experience; project + integration.</dd></div><div><dt>Reuse potential</dt><dd>Asset ingestion, web rendering, scene/content tooling, deployment templates.</dd></div><div><dt>Risk</dt><dd>Rights, bespoke story/local data, localization, integration, fragmented procurement.</dd></div></dl>
-      <div class="payer-flow"><span>Institution / agency</span><i>pays →</i><span>Commissioned 3D experience</span><i>used by →</i><span>Public visitor</span></div>
-      <details><summary>Xem bằng chứng</summary><p>Derby £65,512 contract 2025–2028; City of Wonder £550,000 award; Historic England £400,000 framework ceiling. Không chuyển các record này thành “universal heritage SaaS”.</p></details>
-    </article>
-    <article class="direction-card secondary-direction" data-visual="ops3d-pillar">
-      <div><span class="role">SECONDARY · ACCOUNT-SPECIFIC</span><h3>Operational / Facility 3D Application Layer</h3><p>Chỉ theo đuổi lớp ứng dụng 3D hẹp trên hệ thống dữ liệu/vận hành hiện hữu — không xây full digital-twin platform.</p></div>
-      <div class="system-strip"><span>BMS / CMMS / SCADA / IoT</span><i>→</i><span>Integration</span><i>→</i><strong>Narrow 3D workflow app</strong></div>
-      <p class="caveat">Spend là có thật; integration burden và incumbent platform dependency vẫn lớn.</p>
-    </article>
-  </div>
-  <div class="benchmark-strip tracka-benchmarks">
-    <article class="benchmark-card" data-visual="benchmark" id="bench-labster">
-      <a class="benchmark-media" href="https://www.labster.com/simulations/demo" target="_blank" rel="noopener">
-        <img src="assets/images/bench/labster.png" alt="Ảnh từ Demo Simulation của Labster, minh họa môi trường phòng thí nghiệm ảo."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>Labster</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>Labster</strong><span>Môi trường virtual lab — sản phẩm tham chiếu cho đào tạo số.</span><small>Nguồn: Labster — nguồn chính thức</small></div>
-    </article><article class="benchmark-card" data-visual="benchmark" id="bench-xvr">
-      <a class="benchmark-media" href="https://www.xvrsim.com/en/xvr-academy/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/xvr.png" alt="Người hướng dẫn sử dụng XVR Simulation trong bối cảnh đào tạo mô phỏng."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>XVR Simulation</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>XVR Simulation</strong><span>Mô phỏng nhiệm vụ/ứng phó — sản phẩm tham chiếu.</span><small>Nguồn: XVR Simulation — nguồn chính thức</small></div>
-    </article><article class="benchmark-card" data-visual="benchmark" id="bench-cesium">
-      <a class="benchmark-media" href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/cesium.jpg" alt="Ảnh minh họa ứng dụng 3D địa không gian trên trang CesiumJS chính thức."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>CesiumJS</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>CesiumJS</strong><span>Web spatial 3D — sản phẩm tham chiếu cho lớp ứng dụng địa không gian.</span><small>Nguồn: Cesium — nguồn chính thức</small></div>
-    </article>
+<section id="conclusion" class="section hero">
+  <div class="wrap">
+    <div class="eyebrow">KẾT LUẬN ĐIỀU HÀNH · P24-11R</div>
+    <h1>Savrse không tiếp tục ưu tiên một <span>“metaverse platform” rộng.</span></h1>
+    <p class="hero-lead">Trong giai đoạn tới, Savrse nên vận hành theo <b>hai hướng song song</b>: một hướng bán giải pháp cụ thể cho tổ chức, và một hướng kiểm chứng một game VR trả phí có khả năng chơi lại.</p>
+    <div class="hero-decision">CEO cần hiểu ngay: phê duyệt <b>hướng đi + hoạt động thương mại Track A + một prototype Kinetic nhỏ</b>; chưa phê duyệt full production, đội ngũ lớn hay mở rộng vốn lớn.</div>
+    <div class="hero-paths">
+      <article class="hero-path">
+        <div class="path-label">A · HƯỚNG KINH DOANH CHÍNH — B2B/B2G</div>
+        <h3>Bán giải pháp cụ thể cho tổ chức trả tiền</h3>
+        <div class="hero-solutions"><span>Đào tạo & mô phỏng nhiệm vụ</span><span>Trải nghiệm 3D trên web cho công cộng / di sản</span></div>
+        <p>3D hỗ trợ vận hành cơ sở chỉ là hướng thứ cấp, làm theo bài toán/tài khoản cụ thể.</p>
+      </article>
+      <article class="hero-path b2c">
+        <div class="path-label">B · HƯỚNG SẢN PHẨM B2C</div>
+        <h3>Game VR trả phí có khả năng chơi lại</h3>
+        <p><b>#1 Kinetic Switchyard</b> là concept đầu tiên được làm prototype để kiểm chứng. Đây chưa phải phê duyệt sản xuất thương mại toàn diện.</p>
+      </article>
+      <article class="hero-path pause">
+        <div class="path-label">C · MUSIC WORLD</div>
+        <h3>TIẾP TỤC PAUSE</h3>
+        <p>Chưa đủ bằng chứng để đầu tư lại; cũng chưa đủ cơ sở để kết luận phải kill.</p>
+      </article>
+    </div>
+    <div class="hero-actions"><a class="btn primary" href="#approve">CEO cần phê duyệt gì?</a><a class="btn" href="./full-report/index.html">Mở báo cáo nghiên cứu đầy đủ</a></div>
   </div>
 </section>
 
-<section id="not-now" class="section dark-section" data-section="6">
-  <div class="section-head"><span class="section-no">06</span><div><div class="eyebrow">WHY NOT THE OTHER DIRECTIONS?</div><h2>Không phải “không có thị trường”.<br><span>Là không nên dựng thành trụ cột sản phẩm hiện tại.</span></h2></div></div>
-  <div class="not-now-grid" data-visual="not-now-portfolio">
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M16 4v5"/></svg></span>
-      <b>Horizontal metaverse platform</b><span class="label not-prioritized">NOT PRIORITIZED</span><small>Outcome-specific buying + commoditization/incumbent/network burden.</small>
-    </article>
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></svg></span>
-      <b>Social / UGC world</b><span class="label not-prioritized">NOT PRIORITIZED</span><small>Network effects, creator supply, moderation, social graph, persistent ops.</small>
-    </article>
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <b>Large LBE destination</b><span class="label option">OPTION VALUE</span><small>Ticket demand can exist, but venue/hardware/capacity ops do not fit current product-learning role.</small>
-    </article>
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-      <b>Standalone avatar business</b><span class="label support">SUPPORTING CAPABILITY</span><small>Dependent on host ecosystem/platform; standalone WTP not established here.</small>
-    </article>
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9l3 3-3 3M15 9l-3 3 3 3"/></svg></span>
-      <b>Generic AI 3D platform</b><span class="label support">SUPPORTING CAPABILITY</span><small>Use as productivity/component where useful; strong commodity/free/open pressure.</small>
-    </article>
-    <article>
-      <span class="nn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
-      <b>Standalone capture business</b><span class="label support">BUY / PARTNER WHEN NEEDED</span><small>Capture can support delivery; not selected as standalone thesis.</small>
-    </article>
-  </div>
-  <div class="callout"><b>Shared capability ≠ shared platform strategy.</b> Reuse technology only when it produces measurable delivery benefit and rights/dependencies are clear.</div>
-</section>
-
-<section id="b2c" class="section" data-section="7">
-  <div class="section-head"><span class="section-no">07</span><div><div class="eyebrow">WHY B2C = PREMIUM REPLAYABLE VR GAME</div><h2>Ưu tiên kiến trúc <span>bounded, digitally distributed, directly testable.</span></h2></div></div>
-  <div class="b2c-comparison" data-visual="b2c-architecture-comparison">
-    <div class="compare-head"><span>Kiến trúc</span><span>Scope control</span><span>Direct payment/product evidence</span><span>Network / venue burden</span><span>Vai trò hiện tại</span></div>
-    <div class="compare-row selected"><b>Premium replayable VR game</b><span>Relatively bounded</span><span>Directly testable</span><span>No immediate social/venue burden</span><strong>SELECTED FOR TRACK B</strong></div>
-    <div class="compare-row"><b>Social / UGC</b><span>Broad</span><span>Multi-sided</span><span>High network/creator burden</span><strong>Not selected</strong></div>
-    <div class="compare-row"><b>Music World restart</b><span>Broad/persistent</span><span>Economics unresolved</span><span>Content/social ops</span><strong>PAUSE</strong></div>
-    <div class="compare-row"><b>Free-roam / LBE</b><span>Venue bounded</span><span>Ticket payment observable</span><span>High location/hardware ops</span><strong>Other project type</strong></div>
-    <div class="compare-row"><b>Large-format destination</b><span>Capital/content heavy</span><span>Ticket/event model</span><span>High venue/AV burden</span><strong>Not selected</strong></div>
-    <div class="compare-row"><b>Avatar / virtual goods</b><span>Host-dependent</span><span>Standalone WTP unclear</span><span>Platform/ecosystem burden</span><strong>Component only</strong></div>
-  </div>
-  <p class="caveat">Đây là so sánh strategic fit cho vai trò danh mục hiện tại — <b>không phải market-size ranking</b> và không tạo synthetic score.</p>
-  <div class="benchmark-strip vr-benchmarks">
-    <article class="benchmark-card" data-visual="benchmark" id="bench-beatsaber">
-      <a class="benchmark-media" href="https://store.steampowered.com/app/620980/Beat_Saber/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/beatsaber.jpg" alt="Ảnh sản phẩm Beat Saber trên trang Steam chính thức."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>Beat Saber</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>Beat Saber</strong><span>Benchmark game VR trả phí — không phải hình ảnh Kinetic.</span><small>Nguồn: Beat Games / Steam — nguồn chính thức</small></div>
-    </article><article class="benchmark-card" data-visual="benchmark" id="bench-walkabout">
-      <a class="benchmark-media" href="https://store.steampowered.com/app/1408230/Walkabout_Mini_Golf_VR/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/walkabout.jpg" alt="Ảnh sản phẩm Walkabout Mini Golf VR trên trang Steam chính thức."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>Walkabout Mini Golf VR</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>Walkabout Mini Golf VR</strong><span>Benchmark VR có kỹ năng và lý do chơi lại.</span><small>Nguồn: Mighty Coconut / Steam — nguồn chính thức</small></div>
-    </article><article class="benchmark-card" data-visual="benchmark" id="bench-demeo">
-      <a class="benchmark-media" href="https://www.resolutiongames.com/media-kit-demeo" target="_blank" rel="noopener">
-        <img src="assets/images/bench/demeo.webp" alt="Screenshot Demeo từ media kit chính thức, với bàn chơi trong trải nghiệm tabletop adventure."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>Demeo</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>Demeo</strong><span>Benchmark sản phẩm VR đã phát hành — không phải sản phẩm Savrse.</span><small>Nguồn: Resolution Games — nguồn chính thức</small></div>
-    </article>
+<section id="approve" class="section soft">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">02</span><div><div class="eyebrow">CEO CẦN PHÊ DUYỆT GÌ HÔM NAY?</div><h2>Phê duyệt <span>thứ tự kiểm chứng</span>, chưa phê duyệt scale.</h2></div></div>
+    <div class="decision-grid">
+      <article class="decision-card approve"><h3>Đề nghị CEO phê duyệt ngay</h3><ul>
+        <li>Savrse vận hành theo kiến trúc hai hướng: B2B/B2G và B2C.</li>
+        <li>Track A chủ động theo đuổi khách hàng cho hai trụ cột chính: Đào tạo & mô phỏng nhiệm vụ; Web Spatial 3D / Public-Heritage.</li>
+        <li>Game VR trả phí có khả năng chơi lại là hướng sản phẩm B2C.</li>
+        <li>Kinetic Switchyard là prototype đầu tiên, với phạm vi nhỏ và có thể dừng nhanh nếu bằng chứng xấu.</li>
+        <li>Music World tiếp tục PAUSE.</li>
+      </ul></article>
+      <article class="decision-card defer"><h3>CHƯA xin phê duyệt</h3><ul>
+        <li>Kinetic full commercial production / release.</li><li>Đội ngũ B2C cố định quy mô lớn hoặc mở rộng vốn lớn.</li><li>Ngân sách marketing / UA rộng.</li><li>Platform phát hành cuối cùng hoặc mức giá cuối cùng.</li><li>Multiplayer, live service, UGC, creator economy, persistent world.</li><li>Danh mục content lớn / roadmap nội dung quy mô lớn.</li><li>Horizontal metaverse platform.</li><li>Tự động tái sử dụng hoặc kế thừa scope của Music World.</li>
+      </ul></article>
+    </div>
+    <div class="decision-note"><b>Ranh giới quyết định:</b> Kinetic chỉ là ưu tiên prototype #1. Full scale, staffing/capital lớn và full production vẫn <b>NOT AUTHORIZED</b>.</div>
   </div>
 </section>
 
-<section id="funnel" class="section soft-section" data-section="8">
-  <div class="section-head"><span class="section-no">08</span><div><div class="eyebrow">HOW WE GOT TO KINETIC</div><h2>Mở rộng bằng chứng → thu hẹp concept → <span>chọn thứ tự prototype.</span></h2></div></div>
-  <div class="research-journey">
-    <div class="source-lineage" data-visual="source-lineage"><div><strong>200</strong><span>baseline unique sources</span></div><i>+</i><div><strong>386</strong><span>new unique sources</span></div><i>=</i><div class="emphasis"><strong>586</strong><span>combined unique B2C sources</span></div></div>
-    <div class="funnel" data-visual="concept-funnel"><div style="--w:100%"><b>135</b><span>benchmark records</span></div><div style="--w:82%"><b>42</b><span>concepts</span></div><div style="--w:64%"><b>10</b><span>shortlist</span></div><div style="--w:50%"><b>6</b><span>semifinalists</span></div><div style="--w:38%"><b>3</b><span>finalists</span></div><div style="--w:26%" class="funnel-win"><b>#1</b><span>Kinetic — first prototype</span></div></div>
-    <div class="source-composition" data-visual="44-source-composition"><h3>44 nguồn trực tiếp phục vụ quyết định</h3><div class="segbar"><span style="--s:20" data-label="20 supporting"></span><span style="--s:12" data-label="12 counter-evidence"></span><span style="--s:9" data-label="9 benchmark/prior-art"></span><span style="--s:3" data-label="3 multi-role"></span></div><div class="legend"><span>20 supporting</span><span>12 counter-evidence</span><span>9 benchmark/prior-art</span><span>3 multi-role</span></div><small>Source role composition ≠ vote count for/against Kinetic.</small></div>
+<section id="evidence" class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">03</span><div><div class="eyebrow">RESEARCH ĐÃ CHỨNG MINH ĐƯỢC GÌ?</div><h2>Đã thấy <span>người mua thật và chi tiêu thật</span>. Chưa chứng minh SAVA sẽ thắng.</h2></div></div>
+    <div class="meaning-grid">
+      <article class="meaning-card known"><h3>ĐÃ BIẾT</h3><p>Có người mua và hành vi chi tiêu thực tế trong nhiều nhóm giải pháp gần với năng lực Savrse. Điều đó đủ để chọn một số hướng đáng theo đuổi thương mại.</p></article>
+      <article class="meaning-card unknown"><h3>CHƯA BIẾT</h3><p>Chưa chứng minh SAVA có lợi thế đủ mạnh để thắng các khách hàng đó, chưa đủ dữ liệu kết luận economics của SAVA hấp dẫn, và chưa biết game B2C đề xuất có tạo nhu cầu trả tiền hay không.</p></article>
+    </div>
+    <div class="metric-grid">
+      <article class="metric"><strong>42</strong><span>cơ hội đã nghiên cứu</span></article>
+      <article class="metric"><strong>39</strong><span>có bằng chứng thị trường đã đối chiếu</span><small>3 còn ở mức định hướng</small></article>
+      <article class="metric"><strong>15/42</strong><span>có bằng chứng spend / procurement</span></article>
+      <article class="metric"><strong>20/42</strong><span>có bằng chứng pricing</span></article>
+      <article class="metric"><strong>7/42</strong><span>có bằng chứng repeat / renewal</span></article>
+    </div>
+    <details class="disclosure"><summary>Xem trạng thái nghiên cứu chính thức</summary><div class="detail-body">
+      <p>Chưa có đủ xác nhận trực tiếp từ khách hàng/người dùng mục tiêu. <span class="formal">E3: NOT ACHIEVED</span> và không có E4 đạt.</p>
+      <p>Chưa chứng minh SAVA có lợi thế đủ mạnh để thắng ở các hướng này. <span class="formal">SAVA RTW 0/25 — NOT PROVEN</span>. Điều này có nghĩa là <b>chưa chứng minh</b>, không có nghĩa “SAVA không thể thắng”.</p>
+      <p>Chưa có đủ dữ liệu để kết luận mô hình có lời cho SAVA. <span class="formal">Economics: UNKNOWN / INSUFFICIENT</span>.</p>
+      <p>Ưu tiên địa lý chính thức vẫn chưa được khóa. <span class="formal">D6: UNRESOLVED</span>.</p>
+    </div></details>
   </div>
-  <div class="callout"><b>586 nguồn = coverage, không phải proof.</b> Chất lượng kết luận còn phụ thuộc directness, independence, triangulation, counter-evidence và đúng vai trò quyết định.</div>
 </section>
 
-<section id="finalists" class="section" data-section="9">
-  <div class="section-head"><span class="section-no">09</span><div><div class="eyebrow">THE FINAL THREE</div><h2>Kinetic thắng về <span>risk-adjusted prototype priority</span> — không thắng mọi tiêu chí.</h2></div></div>
-  <div class="finalist-tabs" role="tablist" aria-label="Finalist"><button class="finalist-tab active" data-finalist="kinetic" role="tab" aria-selected="true"><b>#1 Kinetic Switchyard</b><span>first prototype</span></button><button class="finalist-tab" data-finalist="flow" role="tab" aria-selected="false"><b>#2 Flow Desk</b><span>runner-up</span></button><button class="finalist-tab" data-finalist="trajectory" role="tab" aria-selected="false"><b>#3 Trajectory Temple</b><span>third finalist</span></button></div>
-  <div class="finalist-matrix" data-visual="finalist-matrix">
-    <div class="matrix-row matrix-head"><span>Tiêu chí</span><b>Kinetic</b><b>Flow</b><b>Trajectory</b></div>
-    <div class="matrix-row"><span>Evidence strength</span><b>MEDIUM</b><b>MEDIUM</b><b>LOW–MEDIUM</b></div>
-    <div class="matrix-row"><span>WHY‑VR</span><b>MEDIUM–HIGH</b><b>MEDIUM–HIGH</b><b>HIGH</b></div>
-    <div class="matrix-row"><span>Game feel</span><b>HIGH</b><b>MEDIUM–HIGH</b><b>HIGH</b></div>
-    <div class="matrix-row"><span>Decision depth</span><b>HIGH</b><b>MEDIUM–HIGH</b><b>MEDIUM–HIGH</b></div>
-    <div class="matrix-row"><span>Skill / mastery</span><b>HIGH</b><b>MEDIUM–HIGH</b><b>HIGH</b></div>
-    <div class="matrix-row"><span>Replay hypothesis</span><b>HIGH</b><b>MEDIUM–HIGH</b><b>HIGH</b></div>
-    <div class="matrix-row"><span>Interaction stability</span><b>MEDIUM–HIGH hypothesis</b><b>HIGH</b><b>MEDIUM</b></div>
-    <div class="matrix-row"><span>System / physics risk</span><b>MEDIUM–HIGH</b><b>LOW–MEDIUM</b><b>HIGH</b></div>
-    <div class="matrix-row"><span>Prototype feasibility</span><b>HIGH hypothesis</b><b>HIGH hypothesis</b><b>HIGH hypothesis</b></div>
-    <div class="matrix-row risk-row"><span>Main unresolved risk</span><b>VR vs flat; worklike; fairness/readability</b><b>Chore feel; flat substitution; paid value</b><b>Exact demand; throw fairness</b></div>
-  </div>
-  <div class="finalist-detail active" data-finalist-panel="kinetic"><b>Vì sao #1?</b><span>Cân bằng tốt nhất hiện tại giữa replay, mastery, WHY‑VR và phạm vi prototype có thể falsify sớm.</span></div>
-  <div class="finalist-detail" data-finalist-panel="flow"><b>Khi nào Flow có thể vượt?</b><span>Nếu Kinetic thất bại ở interaction trust, live-flow fairness hoặc WHY‑VR; Flow có lợi thế về ổn định tương tác và boundedness.</span></div>
-  <div class="finalist-detail" data-finalist-panel="trajectory"><b>Khi nào Trajectory có thể vượt?</b><span>Nếu embodied value/replay của Kinetic yếu trong khi throw prototype đạt input/physics fairness đủ sạch.</span></div>
-  <details class="evidence-drawer"><summary>Concept ngoài top 3</summary><div class="drawer-grid"><p><b>Signal Beam Router — first out #4:</b> store/visual legibility tốt nhưng flat portability và one-solution consumption risk cao hơn.</p><p><b>Echo Forge — WATCH / DEMOTED:</b> direct mechanic/interaction prior-art pressure; không phải kết luận pháp lý/IP.</p></div><div class="benchmark-strip prior-benchmarks"><article class="benchmark-card" data-visual="benchmark" id="bench-clockwinder">
-      <a class="benchmark-media" href="https://store.steampowered.com/app/1755100/The_Last_Clockwinder/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/clockwinder.webp" alt="Ảnh gameplay The Last Clockwinder trên Steam, dùng làm benchmark prior art cơ chế ghi và lặp hành động."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>The Last Clockwinder</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>The Last Clockwinder</strong><span>Prior-art benchmark cho kiến trúc ghi/lặp hành động.</span><small>Nguồn: Pontoco / Cyan Ventures / Steam — nguồn chính thức</small></div>
-    </article><article class="benchmark-card" data-visual="benchmark" id="bench-weareone">
-      <a class="benchmark-media" href="https://store.steampowered.com/app/1669500/We_Are_One/" target="_blank" rel="noopener">
-        <img src="assets/images/bench/weareone.avif" alt="Ảnh gameplay We Are One trên Steam, dùng làm benchmark prior art cho cơ chế record-and-clone."  referrerpolicy="no-referrer" onerror="this.closest('.benchmark-media').classList.add('image-fallback'); this.style.display='none'">
-        <span class="image-fallback-label" aria-hidden="true">REFERENCE IMAGE<br>We Are One</span>
-        <span class="benchmark-badge">REFERENCE / BENCHMARK<br>KHÔNG PHẢI SẢN PHẨM SAVRSE</span>
-      </a>
-      <div class="benchmark-copy"><strong>We Are One</strong><span>Prior-art benchmark cho kiến trúc record-and-clone.</span><small>Nguồn: Flat Head Studio / Fast Travel Games / Steam — nguồn chính thức</small></div>
-    </article></div></details>
-</section>
-
-<section id="kinetic" class="section kinetic-section kinetic-explainer-v2" data-section="10">
-  <div class="section-head kinetic-head-simple">
-    <span class="section-no">10</span>
-    <div>
-      <div class="eyebrow">WHAT KINETIC ACTUALLY IS · PLAIN-LANGUAGE VERSION</div>
-      <h2>KINETIC SWITCHYARD LÀ <span>GAME GÌ?</span></h2>
-      <p class="kinetic-one-liner"><b>Bạn đứng trong một nhà máy tự động đang chạy liên tục và dùng hai tay trong VR để chuyển các kiện hàng tới đúng máy trước khi dây chuyền bị rối hoặc quá tải.</b></p>
-      <p class="kinetic-subline">Ban đầu chỉ có vài kiện hàng và vài điểm chuyển hướng. Sau đó mọi thứ nhanh hơn, nhiều luồng xuất hiện cùng lúc và bạn phải nhìn trước, đổi đường, cứu lỗi và phối hợp hai tay để giữ cả hệ thống chạy trơn tru.</p>
+<section id="track-a" class="section soft">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">04</span><div><div class="eyebrow">TRACK A — SAVRSE SẼ BÁN CÁI GÌ?</div><h2>Hai nhóm giải pháp chính. <span>Một hướng thứ cấp có điều kiện.</span></h2></div></div>
+    <div class="sell-grid">
+      <article class="sell-card"><div class="sell-role">TRỤ CỘT CHÍNH 01</div><h3>Đào tạo & mô phỏng nhiệm vụ</h3><p>SAVA xây phần mềm/trải nghiệm mô phỏng giúp trường học, cơ quan hoặc tổ chức chuyên môn đào tạo con người thực hiện một nhiệm vụ cụ thể.</p>
+        <div class="buy-box"><b>KHÁCH HÀNG TRẢ TIỀN CHO CÁI GÌ?</b><p>Một gói có thể gồm <b>phần mềm + nội dung mô phỏng + cấu hình theo nghiệp vụ + triển khai/hỗ trợ</b>.</p></div>
+        <div class="facts"><div class="fact"><b>Ai trả tiền?</b><span>Trường/đơn vị đào tạo, cơ quan công, tổ chức chuyên môn.</span></div><div class="fact"><b>Tên category chính thức</b><span>Training / Mission Simulation.</span></div></div>
+        <details class="disclosure"><summary>Xem bằng chứng thương mại ví dụ</summary><div class="detail-body">Các record hiện có gồm UCLan/Labster £180,000 contract value; Defra £118,327 award/procurement value; Coventry/XVR £55,661 two-year licence renewal contract value. Các giá trị này không phải doanh thu hay mức giá của SAVA.</div></details>
+      </article>
+      <article class="sell-card"><div class="sell-role">TRỤ CỘT CHÍNH 02</div><h3>Trải nghiệm 3D trên web cho công cộng / di sản</h3><p>SAVA xây trải nghiệm 3D chạy trên web cho bảo tàng, di sản, điểm đến hoặc cơ quan công. <b>Tổ chức là bên trả tiền; người dân/du khách là người sử dụng.</b></p>
+        <div class="buy-box"><b>KHÁCH HÀNG TRẢ TIỀN CHO CÁI GÌ?</b><p>Một trải nghiệm 3D/web được đặt hàng theo mục tiêu cụ thể, có thể gồm nội dung, tích hợp, triển khai và hỗ trợ.</p></div>
+        <div class="facts"><div class="fact"><b>Ai trả tiền?</b><span>Cơ quan công, bảo tàng/di sản, điểm đến hoặc tổ chức.</span></div><div class="fact"><b>Tên category chính thức</b><span>Web Spatial 3D + commissioned Public / Heritage.</span></div></div>
+        <details class="disclosure"><summary>Xem bằng chứng thương mại ví dụ</summary><div class="detail-body">Các record hiện có gồm Derby £65,512 contract; City of Wonder £550,000 award; Historic England £400,000 framework ceiling. Contract, award và framework ceiling là ba semantic khác nhau, không được quy đổi thành realized SAVA revenue.</div></details>
+      </article>
+      <article class="sell-card secondary"><div class="sell-role">HƯỚNG THỨ CẤP — CHỈ KHI ACCOUNT/PROBLEM CỤ THỂ</div><h3>3D hỗ trợ vận hành cơ sở</h3><p><b>Không xây một nền tảng digital twin mới.</b> Chỉ làm lớp giao diện/ứng dụng 3D cho một bài toán vận hành cụ thể trên các hệ thống dữ liệu khách hàng đã có.</p>
+        <div class="facts"><div class="fact"><b>Cách bán</b><span>Theo bài toán/tài khoản cụ thể; không đặt mục tiêu thành horizontal platform.</span></div><div class="fact"><b>Chi tiết kỹ thuật</b><span>BMS / CMMS / SCADA / IoT là lớp hệ thống phía sau, không phải thông điệp bán hàng chính.</span></div></div>
+      </article>
     </div>
   </div>
+</section>
 
-  <div class="theme-disclosure">
-    <span class="theme-pill">THEME MINH HỌA ĐỀ XUẤT</span>
-    <div><b>Nhà máy tự động / sorting plant tương lai</b><small>Theme này được bổ sung để giúp người đọc hình dung gameplay. Đây <b>chưa phải</b> art direction hay theme cuối cùng đã được research chứng minh.</small></div>
-  </div>
-
-  <div class="kinetic-simple-grid" data-visual="kinetic-explained-simple">
-    <article class="simple-card"><span class="simple-no">01</span><h3>Bạn nhìn thấy gì?</h3><p>Một dây chuyền nhỏ trước mặt: <b>đầu vào → băng chuyền → điểm chuyển hướng → các máy đích.</b> Kiện hàng liên tục chạy vào và mỗi kiện cần đi tới đúng nơi.</p></article>
-    <article class="simple-card"><span class="simple-no">02</span><h3>Bạn làm gì?</h3><p><b>Nhìn → với tay → cầm/xoay/gạt switch → đổi đường → nhìn kết quả → xử lý việc tiếp theo.</b> Bạn thao tác trực tiếp bằng hai tay, không chỉ chọn menu.</p></article>
-    <article class="simple-card"><span class="simple-no">03</span><h3>Mục tiêu là gì?</h3><p>Giữ dòng hàng chạy <b>đúng, nhanh và ít tắc</b> khi tình hình liên tục thay đổi. Đây không phải puzzle chỉ có một đáp án rồi chơi xong.</p></article>
-    <article class="simple-card"><span class="simple-no">04</span><h3>Vì sao chơi lại?</h3><p>Lần sau bạn có thể <b>đọc tình hình sớm hơn, phối hợp hai tay tốt hơn, ít thao tác thừa hơn và đạt personal best cao hơn.</b></p></article>
-  </div>
-
-  <div class="factory-snapshot" data-visual="factory-gameplay-snapshot">
-    <div class="snapshot-copy">
-      <span class="snapshot-kicker">HÃY TƯỞNG TƯỢNG 30 GIÂY CHƠI</span>
-      <h3>Một kiện BLUE đang đi sai đường.</h3>
-      <ol class="thirty-seconds">
-        <li><b>0–5s</b><span>Một kiện BLUE đi vào dây chuyền. Đích của nó là <b>Machine B</b>.</span></li>
-        <li><b>5–10s</b><span>Switch đang để hướng A. Nếu bạn không làm gì, kiện hàng sẽ đi sai máy.</span></li>
-        <li><b>10–15s</b><span>Bạn đưa tay ra và <b>gạt switch sang B</b> trước khi kiện hàng tới junction.</span></li>
-        <li><b>15–20s</b><span>Kiện BLUE vào đúng Machine B. Flow tiếp tục, điểm/throughput tăng.</span></li>
-        <li><b>20–30s</b><span>Một kiện khác xuất hiện, Machine B sắp quá tải và bạn phải xử lý <b>hai việc gần như cùng lúc</b>.</span></li>
-      </ol>
+<section id="not-others" class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">05</span><div><div class="eyebrow">TẠI SAO KHÔNG CHỌN CÁC HƯỚNG KHÁC?</div><h2>Không mở rộng scope trước khi <span>có bằng chứng mua và khả năng thắng.</span></h2></div></div>
+    <div class="reason-grid">
+      <article class="reason-card"><h3>Horizontal metaverse platform</h3><p>Phải cạnh tranh với platform lớn, cần network effect và đầu tư dài hạn trước khi có bằng chứng mua đủ mạnh.</p><small>Chi tiết nghiên cứu: incumbent pressure / network burden / platform economics.</small></article>
+      <article class="reason-card"><h3>Social / UGC / creator ecosystem</h3><p>Muốn thành công phải đồng thời có người chơi, creator, moderation và vận hành cộng đồng liên tục — phạm vi và rủi ro lớn hơn mức bằng chứng hiện có.</p><small>Chi tiết nghiên cứu: network burden / live operations.</small></article>
+      <article class="reason-card"><h3>Generic AI 3D</h3><p>Có thể dùng như công cụ hỗ trợ sản xuất, nhưng chưa có bằng chứng đủ mạnh để biến nó thành một business độc lập của Savrse.</p><small>Chi tiết nghiên cứu: commoditization pressure.</small></article>
     </div>
+  </div>
+</section>
 
-    <div class="factory-demo" id="factory-demo" aria-label="Minh họa tương tác Kinetic trong theme nhà máy">
-      <div class="factory-hud"><span>FACTORY CELL 01</span><b id="factory-hud-state">MỤC TIÊU: đưa kiện BLUE → MACHINE B</b></div>
-      <svg class="factory-svg" viewBox="0 0 760 390" role="img" aria-label="Sơ đồ nhà máy với băng chuyền, switch và hai máy đích">
-        <defs>
-          <marker id="factoryArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L0,8 L9,4 z" fill="currentColor"/></marker>
-          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity=".18"/></filter>
-        </defs>
-        <rect class="factory-floor" x="15" y="18" width="730" height="350" rx="24"/>
-        <g class="machine infeed" transform="translate(42 140)"><rect width="130" height="100" rx="14"/><text x="65" y="39" text-anchor="middle">INFEED</text><text x="65" y="66" text-anchor="middle">KIỆN HÀNG</text></g>
-        <path class="belt belt-main" d="M172 190 H350"/>
-        <circle class="junction-ring" cx="380" cy="190" r="34"/>
-        <path class="belt route-to-a" d="M410 180 C490 145 510 105 585 105"/>
-        <path class="belt route-to-b active" d="M410 200 C490 235 510 285 585 285"/>
-        <g class="machine machine-a" transform="translate(585 55)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE A</text><text x="68" y="67" text-anchor="middle">RED</text></g>
-        <g class="machine machine-b target" transform="translate(585 235)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE B</text><text x="68" y="67" text-anchor="middle">BLUE ✓</text></g>
-        <g class="switch-handle" id="factory-switch-handle" transform="translate(380 190)"><circle r="25"/><line x1="0" y1="0" x2="18" y2="-18"/><circle cx="21" cy="-21" r="7"/></g>
-        <g class="package package-blue" id="factory-package" transform="translate(205 190)"><rect x="-19" y="-16" width="38" height="32" rx="6"/><text x="0" y="5" text-anchor="middle">B</text></g>
-        <text class="belt-label" x="258" y="169">BĂNG CHUYỀN</text>
-        <text class="belt-label" x="347" y="244">SWITCH</text>
-      </svg>
-      <div class="factory-controls">
-        <div class="factory-instruction"><span>BƯỚC 1</span><b id="factory-instruction">Switch hiện đang ở A. Hãy chuyển sang B trước khi kiện hàng tới junction.</b></div>
-        <button type="button" class="factory-action" id="factory-switch">GẠT SWITCH → B</button>
-        <button type="button" class="factory-reset" id="factory-reset">Chơi lại minh họa</button>
+<section id="b2c" class="section soft">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">06</span><div><div class="eyebrow">B2C — TẠI SAO LÀ PREMIUM REPLAYABLE VR GAME?</div><h2>Chọn một sản phẩm có thể <span>prototype nhỏ và đo hành vi trực tiếp.</span></h2></div></div>
+    <p class="section-intro">Hướng này được chọn vì giảm gánh nặng so với một social world/platform rộng, đồng thời cho phép kiểm tra trực tiếp liệu người chơi có hiểu, thích, chơi lại và thấy giá trị trả tiền hay không.</p>
+    <div class="b2c-grid">
+      <article class="b2c-reason"><b>Scope nhỏ hơn</b><p>Không cần xây thế giới lớn hoặc hệ sinh thái social ngay từ đầu.</p></article>
+      <article class="b2c-reason"><b>Prototype nhanh hơn</b><p>Có thể khóa một vòng lặp chơi nhỏ để kiểm tra trước khi mở rộng.</p></article>
+      <article class="b2c-reason"><b>Người chơi có thể trả tiền trực tiếp</b><p>Cho phép kiểm chứng hành vi sản phẩm/giá trị mà không phụ thuộc hợp đồng B2B.</p></article>
+      <article class="b2c-reason"><b>Quan sát được hành vi chơi lại</b><p>Replay phải đến từ kỹ năng và hệ thống, không phải chỉ từ content mới.</p></article>
+      <article class="b2c-reason"><b>Không cần network effect ngay</b><p>Prototype có thể đứng độc lập; không cần đông người chơi hay creator để có giá trị ban đầu.</p></article>
+      <article class="b2c-reason"><b>Không cần live operation liên tục</b><p>Giảm rủi ro vận hành cộng đồng, moderation và content cadence.</p></article>
+    </div>
+    <div class="boundary-strip"><b>Điều chưa được chứng minh:</b> premium VR direction là hướng để kiểm chứng; chưa phải bằng chứng về product-market fit, mức sẵn sàng trả tiền hay hiệu quả kinh tế của SAVA.</div>
+  </div>
+</section>
+
+<section id="kinetic" class="section kinetic">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">07</span><div><div class="eyebrow">KINETIC SWITCHYARD LÀ GAME GÌ?</div><h2>Một game về <span>điều khiển dòng chảy bằng hai tay</span> trong một hệ thống đang chạy.</h2><p class="kinetic-one"><b>Bạn đứng trong một nhà máy tự động đang chạy liên tục và dùng hai tay trong VR để chuyển các kiện hàng tới đúng máy trước khi dây chuyền bị rối hoặc quá tải.</b></p></div></div>
+    <div class="theme-note"><span class="theme-pill">THEME MINH HỌA ĐỀ XUẤT</span><div><b>Nhà máy tự động / sorting plant tương lai.</b> Theme này giúp hình dung gameplay; đây chưa phải theme hoặc art direction cuối cùng đã được người chơi xác nhận.</div></div>
+    <div class="kinetic-simple">
+      <article class="simple-card"><span>01</span><h3>Bạn nhìn thấy gì?</h3><p>Đầu vào → băng chuyền → điểm chuyển hướng → các máy đích. Kiện hàng liên tục chạy vào.</p></article>
+      <article class="simple-card"><span>02</span><h3>Bạn làm gì?</h3><p>Nhìn → với tay → gạt/xoay switch → đổi đường → xem kết quả → xử lý việc tiếp theo.</p></article>
+      <article class="simple-card"><span>03</span><h3>Mục tiêu là gì?</h3><p>Giữ dòng hàng đúng, nhanh và ít tắc khi tình hình liên tục thay đổi.</p></article>
+      <article class="simple-card"><span>04</span><h3>Vì sao chơi lại?</h3><p>Đọc tình hình sớm hơn, phối hợp hai tay tốt hơn, ít thao tác thừa hơn và cải thiện personal best.</p></article>
+    </div>
+    <div class="factory-wrap">
+      <div class="walkthrough"><span>HÃY TƯỞNG TƯỢNG 30 GIÂY CHƠI</span><h3>Một kiện BLUE đang đi sai đường.</h3><ol>
+        <li><b>0–5s</b><span>Kiện BLUE đi vào dây chuyền; đích của nó là Machine B.</span></li>
+        <li><b>5–10s</b><span>Switch đang hướng A. Nếu không làm gì, kiện sẽ đi sai máy.</span></li>
+        <li><b>10–15s</b><span>Bạn đưa tay ra và gạt switch sang B trước khi kiện tới junction.</span></li>
+        <li><b>15–20s</b><span>Kiện BLUE vào đúng Machine B; dòng chảy tiếp tục.</span></li>
+        <li><b>20–30s</b><span>Luồng mới xuất hiện, Machine B sắp quá tải; bạn phải xử lý hai việc gần như cùng lúc.</span></li>
+      </ol></div>
+      <div class="factory-demo" id="factory-demo" aria-label="Minh họa tương tác Kinetic trong theme nhà máy">
+        <div class="factory-hud"><span>FACTORY CELL 01</span><b id="factory-hud-state">MỤC TIÊU: đưa kiện BLUE → MACHINE B</b></div>
+        <svg class="factory-svg" viewBox="0 0 760 390" role="img" aria-label="Sơ đồ nhà máy với băng chuyền, switch và hai máy đích">
+          <rect class="factory-floor" x="15" y="18" width="730" height="350" rx="24"/>
+          <g class="machine" transform="translate(42 140)"><rect width="130" height="100" rx="14"/><text x="65" y="39" text-anchor="middle">INFEED</text><text x="65" y="66" text-anchor="middle">KIỆN HÀNG</text></g>
+          <path class="belt" d="M172 190 H350"/><circle class="junction-ring" cx="380" cy="190" r="34"/>
+          <path class="belt route-to-a active" d="M410 180 C490 145 510 105 585 105"/><path class="belt route-to-b" d="M410 200 C490 235 510 285 585 285"/>
+          <g class="machine" transform="translate(585 55)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE A</text><text x="68" y="67" text-anchor="middle">RED</text></g>
+          <g class="machine target" transform="translate(585 235)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE B</text><text x="68" y="67" text-anchor="middle">BLUE ✓</text></g>
+          <g class="switch-handle" id="factory-switch-handle" transform="translate(380 190) rotate(-42)"><circle r="25"/><line x1="0" y1="0" x2="18" y2="-18"/><circle cx="21" cy="-21" r="7"/></g>
+          <g class="package-blue" transform="translate(260 190)"><rect x="-19" y="-16" width="38" height="32" rx="6"/><text x="0" y="5" text-anchor="middle">B</text></g>
+          <text class="belt-label" x="230" y="166">BĂNG CHUYỀN</text><text class="belt-label" x="347" y="244">SWITCH</text>
+        </svg>
+        <div class="factory-controls"><div class="factory-instruction" id="factory-instruction">Switch đang ở A. Hãy chuyển sang B.</div><button class="factory-action" id="factory-switch" type="button">GẠT SWITCH → B</button><button class="factory-reset" id="factory-reset" type="button">Chơi lại</button></div>
+        <div class="factory-result" id="factory-result"><span>LIVE FEEDBACK</span><b>Kiện BLUE đang tới junction…</b></div>
       </div>
-      <div class="factory-result" id="factory-result"><span>LIVE FEEDBACK</span><b>Kiện BLUE đang tới junction…</b></div>
     </div>
+    <div class="mastery"><div><h3>Điều làm nó thành game</h3><p>Không phải “tìm một đáp án rồi xong”. Người chơi dần dự đoán tắc nghẽn sớm hơn, dùng hai tay song song, ưu tiên tốt hơn và phục hồi lỗi nhanh hơn.</p></div><div class="ladder"><div><b>LEVEL 1</b><span>1 luồng · 1 switch</span><small>Hiểu thao tác</small></div><div><b>LEVEL 2</b><span>Nhiều luồng</span><small>Chọn đúng route</small></div><div><b>LEVEL 3</b><span>Xung đột / quá tải</span><small>Ưu tiên & cứu lỗi</small></div><div><b>MASTERY</b><span>Dự đoán + hai tay</span><small>Personal best</small></div></div></div>
+    <div class="kinetic-warning"><b>Điều vẫn chưa biết:</b> người chơi có thực sự thích, tự muốn chơi lại và sẵn sàng trả tiền hay không. Prototype được làm để trả lời những câu hỏi đó.</div>
+    <details class="disclosure"><summary>Xem cơ sở nghiên cứu của concept</summary><div class="detail-body">
+      <p><span class="formal">Research-supported core</span>: routing trong live system; reach/grab/rotate/redirect/switch; changing state; recovery/optimization; mastery/retry hypothesis; VR-vs-flat test.</p>
+      <p><span class="formal">Proposed visualization</span>: nhà máy, băng chuyền, kiện hàng và Machine A/B là theme minh họa, chưa phải final theme.</p>
+      <p><span class="formal">Unproven</span>: PMF, WTP, retention, commercial success, và việc factory theme có hấp dẫn người chơi hay không.</p>
+    </div></details>
   </div>
+</section>
 
-  <div class="mastery-explainer" data-visual="kinetic-mastery-explainer">
-    <div class="mastery-copy"><span>ĐIỀU LÀM NÓ THÀNH GAME</span><h3>Không phải “tìm đáp án”. Là <span>ngày càng vận hành giỏi hơn.</span></h3><p>Lần đầu bạn chỉ cố không làm sai. Sau nhiều lần chơi, bạn bắt đầu dự đoán congestion trước khi nó xảy ra, dùng hai tay song song, chọn việc ưu tiên tốt hơn và phục hồi lỗi nhanh hơn.</p></div>
-    <div class="difficulty-ladder">
-      <div><b>LEVEL 1</b><span>1 luồng · 1 switch</span><small>Hiểu thao tác</small></div><i>→</i>
-      <div><b>LEVEL 2</b><span>Nhiều luồng</span><small>Chọn đúng route</small></div><i>→</i>
-      <div><b>LEVEL 3</b><span>Xung đột / quá tải</span><small>Ưu tiên & recovery</small></div><i>→</i>
-      <div><b>MASTERY</b><span>Dự đoán + hai tay</span><small>Personal best</small></div>
+<section id="why-kinetic" class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">08</span><div><div class="eyebrow">TẠI SAO KINETIC ĐƯỢC CHỌN #1?</div><h2>Từ 42 concept đến <span>một prototype ưu tiên đầu tiên.</span></h2></div></div>
+    <div class="funnel"><span>42 concepts</span><i>→</i><span>10 shortlist</span><i>→</i><span>6 semifinalists</span><i>→</i><span>3 finalists</span><i>→</i><strong>#1 Kinetic</strong></div>
+    <div class="concept-defs">
+      <article class="concept-def"><span class="rank-badge">#1</span><b>KINETIC SWITCHYARD</b><p>Dùng hai tay để đổi tuyến các luồng vật thể trong một hệ thống đang chạy, xử lý tắc nghẽn và chơi lại để vận hành ngày càng tốt hơn.</p></article>
+      <article class="concept-def"><span class="rank-badge">#2</span><b>FLOW DESK</b><p>Thao tác trong một không gian nhỏ để sắp xếp và định vị vật thể dưới nhiều ràng buộc cùng lúc; có nhiều cách giải hợp lệ và chơi lại để tối ưu cách bố trí.</p></article>
+      <article class="concept-def"><span class="rank-badge">#3</span><b>TRAJECTORY TEMPLE</b><p>Đọc quỹ đạo và vật cản trong không gian 3D, chọn đường ném, thực hiện cú ném bằng động tác vật lý rồi điều chỉnh ngay sau mỗi lần thử.</p></article>
     </div>
-  </div>
-
-  <div class="kinetic-plain-loop" data-visual="kinetic-core-loop-plain">
-    <h3>Core loop — dịch sang ngôn ngữ người chơi</h3>
-    <div class="plain-loop-row"><span>NHÌN TÌNH HÌNH</span><i>→</i><span>ĐỔI ĐƯỜNG BẰNG TAY</span><i>→</i><span>XEM KẾT QUẢ</span><i>→</i><span>XỬ LÝ TÌNH HUỐNG MỚI</span><i>→</i><strong>CHƠI LẠI TỐT HƠN</strong></div>
-    <small>Research terminology phía sau: read changing state → physically reroute → observe result → score/throughput feedback → demand changes → recover/optimize → retry/personal best.</small>
-  </div>
-
-  <div class="kinetic-evidence-boundary">
-    <article><span class="boundary-label supported">RESEARCH-SUPPORTED CORE</span><p>Routing trong live system; reach/grab/rotate/redirect/switch; changing state; recovery/optimization; mastery/retry hypothesis; VR-vs-flat falsification.</p></article>
-    <article><span class="boundary-label proposed">PRODUCT VISUALIZATION ADDED HERE</span><p>Nhà máy tự động, băng chuyền, kiện hàng và Machine A/B là <b>theme minh họa đề xuất</b> để làm concept dễ hình dung hơn — chưa khóa final theme.</p></article>
-    <article><p>PMF, WTP, retention, commercial success và việc factory theme có hấp dẫn người chơi hay không.</p></article>
-  </div>
-
-  <div class="kinetic-research-details">
-    <div class="hypothesis-grid" data-visual="kinetic-hypotheses">
-      <article><span>WHY‑VR</span><b>MEDIUM–HIGH</b><small>hypothesis</small></article>
-      <article><span>REPLAY</span><b>HIGH</b><small>hypothesis</small></article>
-      <article><span>PROTOTYPE FEASIBILITY</span><b>HIGH</b><small>hypothesis</small></article>
-      <article><span>COMMERCIAL CONFIDENCE</span><b>NOT PROVEN</b><small>no PMF/WTP/retention proof</small></article>
+    <div class="compare-cards">
+      <article class="compare-card first"><h3>#1 Kinetic Switchyard</h3><dl>
+        <div><dt>Game dễ hiểu?</dt><dd>CAO</dd></div><div><dt>VR tạo giá trị rõ?</dt><dd>TRUNG BÌNH–CAO</dd></div><div><dt>Có lý do chơi lại?</dt><dd>CAO</dd></div><div><dt>Prototype nhỏ/nhanh?</dt><dd>CAO · giả thuyết</dd></div><div class="compare-risk"><dt>Rủi ro chính</dt><dd>VR có thể không hơn màn hình phẳng; cảm giác như công việc; độ công bằng và khả năng đọc trạng thái.</dd></div>
+      </dl></article>
+      <article class="compare-card"><h3>#2 Flow Desk</h3><dl>
+        <div><dt>Game dễ hiểu?</dt><dd>CAO</dd></div><div><dt>VR tạo giá trị rõ?</dt><dd>TRUNG BÌNH–CAO</dd></div><div><dt>Có lý do chơi lại?</dt><dd>TRUNG BÌNH–CAO</dd></div><div><dt>Prototype nhỏ/nhanh?</dt><dd>CAO · giả thuyết</dd></div><div class="compare-risk"><dt>Rủi ro chính</dt><dd>Cảm giác như công việc; màn hình phẳng có thể thay thế; giá trị trả phí chưa rõ.</dd></div>
+      </dl></article>
+      <article class="compare-card"><h3>#3 Trajectory Temple</h3><dl>
+        <div><dt>Game dễ hiểu?</dt><dd>CAO</dd></div><div><dt>VR tạo giá trị rõ?</dt><dd>CAO</dd></div><div><dt>Có lý do chơi lại?</dt><dd>CAO</dd></div><div><dt>Prototype nhỏ/nhanh?</dt><dd>CAO · giả thuyết</dd></div><div class="compare-risk"><dt>Rủi ro chính</dt><dd>Nhu cầu trực tiếp còn yếu; độ tin cậy và công bằng của cú ném.</dd></div>
+      </dl></article>
     </div>
-    <div class="mvp-boundary" data-visual="mvp-boundary">
-      <div class="mvp-in"><h3>PROTOTYPE — IN</h3><span>compact factory workcell</span><span>routing & live state</span><span>grab / rotate / switch</span><span>feedback / scoring</span><span>replay / skill</span><span>VR vs flat test</span></div>
-      <div class="mvp-out"><h3>NOT IN THIS PROTOTYPE</h3><span>large world</span><span>social graph</span><span>creator economy</span><span>marketplace</span><span>broad multiplayer</span><span>live-service complexity</span></div>
+    <p class="watch-line"><b>Signal Beam Router:</b> first out. <b>Echo Forge:</b> WATCH / DEMOTED do áp lực prior-art trực tiếp. Thứ hạng này là thứ tự prototype, không phải dự báo doanh thu tương lai.</p>
+    <details class="disclosure"><summary>Xem chi tiết research coverage và matrix đầy đủ</summary><div class="detail-body">
+      <p>Nghiên cứu B2C dùng 200 nguồn usable ban đầu + 386 nguồn mới sau de-dup = <b>586 nguồn external unique</b>; 135 benchmark records; 42 concepts.</p>
+      <p>Matrix chi tiết giữ các lớp: evidence strength, player demand signal, five-second legibility, fantasy, WHY-VR, play-feel potential, decision depth, skill formation, replay, prior-art risk, interaction reliability, system/physics risk, prototype feasibility và unresolved risk. Không dùng tổng điểm để “bỏ phiếu” concept.</p>
+    </div></details>
+  </div>
+</section>
+
+<section id="failure" class="section soft">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">09</span><div><div class="eyebrow">ĐIỀU GÌ CÓ THỂ KHIẾN KINETIC THẤT BẠI?</div><h2>Prototype phải có khả năng <span>chứng minh concept không đáng làm tiếp.</span></h2></div></div>
+    <div class="failure-test"><div class="test-box"><b>Kinetic trên VR</b><span>vươn tay · gạt switch · định tuyến không gian</span></div><div class="vs">VS</div><div class="test-box"><b>Bản màn hình thường</b><span>cùng logic routing bằng mouse/controller</span></div><div class="test-result"><b>Nếu bản màn hình thường cũng vui và hiệu quả tương đương hoặc tốt hơn, lý do tồn tại của game dưới dạng VR bị suy yếu.</b></div></div>
+    <div class="kill-grid"><span>Người chơi không tự muốn chơi lại.</span><span>Thao tác có cảm giác không công bằng.</span><span>Người chơi đổ lỗi cho tracking/physics.</span><span>Khó nhìn và hiểu trạng thái hệ thống.</span><span>Mỏi tay / khó tiếp cận lấn át trải nghiệm.</span><span>Không hình thành cảm giác ngày càng giỏi hơn.</span><span>Game có cảm giác giống làm việc hơn là chơi.</span><span>Người chơi không thấy đủ giá trị để trả tiền.</span><span>Prototype nhỏ vẫn không ổn định kỹ thuật.</span></div>
+    <details class="disclosure"><summary>Xem thuật ngữ nghiên cứu phía sau</summary><div class="detail-body">Formal framing: falsification logic, WHY-VR hard test, voluntary retry, skill attribution, fairness/trust, state legibility, fatigue/accessibility, technical stability. Kết quả prototype là <span class="formal">PROCEED / REVISE / STOP</span>, không tự động dẫn tới vertical slice hay full production.</div></details>
+  </div>
+</section>
+
+<section id="music-world" class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">10</span><div><div class="eyebrow">MUSIC WORLD</div><h2>MUSIC WORLD: <span>TIẾP TỤC PAUSE</span></h2></div></div>
+    <div class="music-status"><h3>Không kill. Không restart.</h3><p>Hiện chưa có đủ bằng chứng để đầu tư lại, nhưng cũng chưa đủ cơ sở để kết luận phải kill.</p></div>
+    <div class="music-grid">
+      <article class="music-card"><h3>ĐÃ BIẾT</h3><ul><li>Có tín hiệu phân phối trên SideQuest.</li><li>Mức sử dụng từng tăng rồi giảm; peak khoảng tháng 4 và giảm trong tháng 6.</li><li>Có một nhóm nhỏ sử dụng lặp lại / phiên dài.</li><li>Có tín hiệu định tính về thiếu content / retention yếu.</li><li>Paid marketing chưa được thực hiện.</li></ul></article>
+      <article class="music-card"><h3>CHƯA BIẾT</h3><ul><li>Payer conversion chính xác.</li><li>Economics có thể quy trực tiếp cho sản phẩm.</li><li>Hành vi cohort chi tiết.</li><li>Nguyên nhân retention theo quan hệ nhân quả.</li><li>Chi phí hạ tầng/content còn lại.</li></ul></article>
+      <article class="music-card"><h3>CÓ THỂ TÁI SỬ DỤNG — NẾU XÁC MINH</h3><ul><li>Một số module/asset.</li><li>Chỉ khi portability, quyền sử dụng, chất lượng và dependency đạt yêu cầu.</li><li>Reuse phải thực sự giảm lead time, chi phí hoặc lỗi.</li></ul></article>
     </div>
+    <details class="disclosure"><summary>Xem đánh giá chính thức</summary><div class="detail-body"><p>Formal assessment: <span class="formal">PAUSE — 60 / confidence MEDIUM</span>.</p><p><span class="formal">D7 NOT CLOSED</span>. Trạng thái này không được chuyển thành KILL hoặc RESTART nếu chưa có quyết định mới.</p></div></details>
   </div>
-
-  <div class="kinetic-bottom-line"><span>NÓI GỌN TRONG 1 CÂU</span><b>Kinetic = “giữ một nhà máy đang chạy khỏi rối tung bằng cách dùng hai tay để định tuyến, ưu tiên và cứu lỗi — rồi chơi lại để vận hành giỏi hơn chính lần trước.”</b></div>
 </section>
 
-<section id="falsification" class="section red-section" data-section="11">
-  <div class="section-head"><span class="section-no">11</span><div><div class="eyebrow">WHAT COULD KILL KINETIC</div><h2>Khuyến nghị chỉ có giá trị nếu <span>có thể bị bác bỏ.</span></h2></div></div>
-  <div class="ab-test" data-visual="why-vr-falsification"><div class="test-box"><span>A</span><b>VR KINETIC</b><small>embodied reach / grab / switch / spatial route</small></div><div class="versus">VS</div><div class="test-box"><span>B</span><b>FLAT-SCREEN EQUIVALENT</b><small>same routing logic via mouse/controller</small></div><div class="test-outcome"><b>Nếu flat = hoặc tốt hơn</b><span>→ WHY‑VR thesis suy yếu / thất bại.</span></div></div>
-  <div class="kill-signals" data-visual="kill-signals"><h3>Failure signals</h3><div class="kill-grid">
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>Không tự nguyện retry</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Thất bại bị quy cho tracking / physics</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>State khó đọc</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4 0-8-3-8-8 0-2 1-4 2-5-1 2 0 4 1 5C6 9 7 6 9 4c2-2 4-2 6-1-1 1-2 2-2 3 1 0 2 0 3 1-1 1-1 2-1 3 1-1 2-2 4-1 0 4-2 12-7 12z"/></svg>Fatigue / accessibility dominates</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.1 5.6.8-4 4 .9 5.6L12 16.1 7.6 18.5l.9-5.6-4-4 5.6-.8z"/></svg>Interaction feels unfair</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>Mastery không hình thành</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>Fantasy bị cảm nhận như công việc logistics</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Premium value chưa rõ</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Không ổn định kỹ thuật trong prototype nhỏ</span>
-  </div></div>
-  <div class="prototype-loop" data-visual="prototype-evidence-loop"><span>PROTOTYPE</span><i>→</i><span>OBSERVE</span><i>→</i><span>INTERPRET</span><i>→</i><strong>PROCEED / REVISE / STOP</strong></div>
-  <p class="caveat">Prototype là công cụ tạo bằng chứng — không phải pre-commitment cho vertical slice hay full production.</p>
+<section id="six-months" class="section soft">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">11</span><div><div class="eyebrow">6 THÁNG TIẾP THEO</div><h2>Hai nhánh phải quay lại CEO với <span>bằng chứng thực tế khác nhau.</span></h2></div></div>
+    <div class="month-grid">
+      <article class="month-card"><h3>Track A · 0–6 tháng</h3><p>Mục tiêu: học từ khách hàng, hợp đồng và delivery thật.</p><ol><li>Chủ động tiếp cận buyer/account cho hai trụ cột chính.</li><li>Tìm khách hàng thực sự trả tiền hoặc procurement proof phù hợp.</li><li>Đo effort triển khai, support và customization.</li><li>Kiểm tra phần nào có thể tái sử dụng giữa các dự án.</li><li>Đo economics thực tế của SAVA khi có dữ liệu.</li></ol></article>
+      <article class="month-card"><h3>Track B · 0–6 tháng</h3><p>Mục tiêu: học từ hành vi người chơi thật trên một prototype nhỏ.</p><ol><li>Xây prototype Kinetic phạm vi nhỏ.</li><li>Kiểm tra gameplay có dễ hiểu và có vui không.</li><li>So sánh VR với màn hình thường.</li><li>Đo hành vi tự nguyện thử lại và tiến bộ kỹ năng.</li><li>Kiểm tra cảm giác công bằng, tracking/physics và độ ổn định.</li><li>Dừng hoặc sửa nếu tín hiệu kém.</li></ol></article>
+    </div>
+    <div class="return-box"><div class="return-item"><b>TRACK A QUAY LẠI CEO VỚI</b>Bằng chứng buyer thật, hợp đồng/paid proof, khả năng reuse, effort delivery và economics thực tế.</div><div class="return-item"><b>TRACK B QUAY LẠI CEO VỚI</b>Hành vi người chơi, retry, giá trị thực của VR so với flat-screen, cảm giác mastery và technical trust.</div></div>
+    <div class="decision-note">Không có bước tự động từ prototype → vertical slice → full production. Mỗi bước mở rộng cần quyết định riêng sau khi có bằng chứng mới.</div>
+  </div>
 </section>
 
-<section id="music-world" class="section" data-section="12">
-  <div class="section-head"><span class="section-no">12</span><div><div class="eyebrow">MUSIC WORLD — WHAT WE LEARNED</div><h2><span>PAUSE — 60/MEDIUM.</span> Không kill. Không restart.</h2></div></div>
-  <div class="music-grid" data-visual="music-world-matrix">
-    <article class="known">
-      <h3><span class="m-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>KNOWN</h3>
-      <ul><li>SideQuest distribution signal.</li><li>Usage rose then declined; peak around April, decline in June.</li><li>Small repeat / long-session group.</li><li>Qualitative content-gap / weak retention signals.</li><li>Paid marketing was not executed.</li></ul>
-    </article>
-    <article class="unknown">
-      <h3><span class="m-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>UNKNOWN</h3>
-      <ul><li>Exact payer conversion.</li><li>Product-specific / attributable economics.</li><li>Precise cohort behavior.</li><li>Causal retention attribution.</li><li>Remaining infrastructure/content cost.</li></ul>
-    </article>
-    <article class="reuse">
-      <h3><span class="m-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>REUSABLE — IF VERIFIED</h3>
-      <ul><li>Selected modules/assets.</li><li>Only if portability, rights, quality, dependencies pass.</li><li>Reuse must materially reduce lead time/cost/error.</li></ul>
-    </article>
-    <article class="notinfer">
-      <h3><span class="m-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>NOT CONCLUDABLE</h3>
-      <ul><li>BU revenue 0 ≠ Music World payment 0.</li><li>Weak retention ≠ one proven root cause.</li><li>Sunk cost ≠ reason to restart.</li><li>Kinetic ≠ Music World 2.</li></ul>
-    </article>
+<section id="details" class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="section-no">12</span><div><div class="eyebrow">CHI TIẾT NGHIÊN CỨU / GOVERNANCE</div><h2>Phần này để audit. <span>Không cần đọc để hiểu quyết định kinh doanh.</span></h2></div></div>
+    <div class="formal-grid">
+      <article class="formal-card"><b>Customer validation</b><p>INSUFFICIENT. E3 NOT ACHIEVED; không có E3/E4 achieved.</p></article>
+      <article class="formal-card"><b>SAVA Right-to-Win</b><p>0/25 = NOT PROVEN. Chưa chứng minh, không phải “không thể thắng”.</p></article>
+      <article class="formal-card"><b>SAVA economics</b><p>UNKNOWN / INSUFFICIENT. Không quy đổi unknown thành zero/negative.</p></article>
+      <article class="formal-card"><b>Geography</b><p>D6 UNRESOLVED. Không có formal geography priority đã khóa.</p></article>
+      <article class="formal-card"><b>Capital / scale</b><p>Gate 7 BLOCKED; major staffing/capital và full scale NOT AUTHORIZED.</p></article>
+      <article class="formal-card"><b>Final governance</b><p>Gate 8 BLOCKED / CONDITIONAL; D8/D10 NOT AUTHORIZED; D11 HOLD / NOT AUTHORIZED.</p></article>
+    </div>
+    <details class="disclosure"><summary>Xem coverage nguồn B2C và direct decision source map</summary><div class="detail-body">
+      <p>B2C: 200 initial unique usable sources + 386 new unique sources = <b>586 combined unique external sources</b>.</p>
+      <p>Concept process: 135 benchmark records → 42 concepts → 10 shortlist → 6 semifinalists → 3 finalists → 1 first prototype priority.</p>
+      <p>Direct decision source map: 44 sources. Đây là composition của evidence, <b>không phải một cuộc bỏ phiếu</b>.</p>
+      <div class="source-map"><span><b>20</b>supporting</span><span><b>12</b>counter-evidence</span><span><b>9</b>benchmark / prior-art</span><span><b>3</b>multi-role</span></div>
+    </div></details>
+    <details class="disclosure"><summary>Xem nguyên tắc semantic dữ liệu thương mại</summary><div class="detail-body"><ul><li>Contract value ≠ realized revenue.</li><li>Award ≠ realized revenue.</li><li>Framework ceiling ≠ realized sales.</li><li>External list price ≠ SAVA price.</li><li>Pipeline lead count ≠ market demand.</li></ul></div></details>
+    <details class="disclosure"><summary>Mở nguồn nghiên cứu đầy đủ</summary><div class="detail-body"><p><a class="btn primary" href="./full-report/index.html">Mở bản full-report trong repository</a> <a class="btn" href="https://docs.google.com/document/d/1p0o3vAIZel3aFqAYfS5BZdOTP2hzeMN45Aecgnb3ax8/edit" target="_blank" rel="noopener">Mở Google Doc authoritative report ↗</a></p></div></details>
   </div>
-  <div class="state-banner"><b>DECISION: PAUSE — 60/MEDIUM</b><span>D7 remains NOT CLOSED.</span></div>
 </section>
-
-<section id="roadmap" class="section soft-section" data-section="13">
-  <div class="section-head"><span class="section-no">13</span><div><div class="eyebrow">ROADMAP 2026–2029</div><h2>Scale chỉ sau khi <span>evidence gate</span> mở.</h2></div></div>
-  <div class="roadmap-tabs" role="tablist"><button class="roadmap-tab active" data-roadmap="a" role="tab" aria-selected="true">TRACK A · Contract-led</button><button class="roadmap-tab" data-roadmap="b" role="tab" aria-selected="false">TRACK B · Product-led</button></div>
-  <div class="roadmap-lane active" data-roadmap-panel="a" data-visual="track-a-roadmap">
-    <article><span>0–6 THÁNG</span><h3>Paid proof</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Theo đuổi buyer/account cho hai pillar; chỉ đưa operational 3D vào khi problem/account rõ.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Buyer, commercial object, contract/paid proof.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Có delivery thật để đo.</p></article>
-    <article><span>6–12</span><h3>Standardize through paid work</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Đo deployment, customization, support, reuse qua dự án trả phí.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Phần nào lặp lại; effort/cost có giảm.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Reusable module pattern đủ rõ.</p></article>
-    <article><span>12–24</span><h3>Repeatable commercial object</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Đóng gói scope/price/partner role theo vertical nếu evidence cho phép.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Repeat/reuse + economics thực tế.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Quyết định productization dọc.</p></article>
-    <article><span>24–36</span><h3>Scale proven pillars only</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Mở rộng solution/geography chỉ ở nơi bằng chứng đã đủ.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Reference, repeat, serviceability, economics.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Scale decision riêng.</p></article>
-  </div>
-  <div class="roadmap-lane" data-roadmap-panel="b" data-visual="track-b-roadmap">
-    <article><span>0–6 THÁNG</span><h3>Bounded Kinetic prototype</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Test core loop, VR-vs-flat, retry, skill, fairness, readability, fatigue/stability.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Observed product behavior.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Proceed / revise / stop.</p></article>
-    <article><span>6–12</span><h3>Vertical slice — only if validated</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Chỉ cân nhắc vertical slice nếu rủi ro core giảm rõ.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Skill/retry/WHY‑VR + technical trust.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Decision riêng trước vertical slice.</p></article>
-    <article><span>12–24</span><h3>Limited market test — if separately approved</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Store/discovery/payment/return behavior.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Direct demand, payment, retention-like behavior, build-release learning.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Commercial expansion decision riêng.</p></article>
-    <article><span>24–36</span><h3>Scale / niche / stop</h3><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span> ACTION</b><p>Phản ứng theo evidence thực tế; không mặc định scale.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M5.6 5.6l4.2 4.2"/></svg></span> EVIDENCE</b><p>Observed economics, return/payment, delivery cadence.</p><b><span class="rm-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> NEXT GATE</b><p>Full production / expansion consideration.</p></article>
-  </div>
-  <div class="resource-posture" data-visual="resource-posture"><b>RESOURCE PRINCIPLE</b><span>Signed Track A obligations receive operational priority</span><i>·</i><span>Protect a small B2C core where approved</span><i>·</i><span>Shared resources move through gates</span><i>·</i><span>27-person roster ≠ 27 available FTE</span></div>
-</section>
-
-<section id="decisions" class="section decision-section" data-section="14">
-  <div class="section-head"><span class="section-no">14</span><div><div class="eyebrow">WHAT CEO NEEDS TO DECIDE</div><h2>Phê duyệt <span>thứ tự kiểm chứng</span>, chưa phê duyệt scale.</h2></div></div>
-  <div class="decision-columns" data-visual="ceo-decision-panel">
-    <article class="approve">
-      <h3><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>APPROVE NOW</h3>
-      <ul><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Kiến trúc hai nhánh.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Track A: active commercial pursuit / paid proof cho 2 trụ cột chính.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Premium replayable VR game là hướng B2C ưu tiên.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Kinetic = concept đầu tiên để prototype.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Prototype Kinetic phạm vi bounded.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Flow #2, Trajectory #3 là fallback.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Music World giữ PAUSE.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Reuse capability chỉ khi qua technical/rights/value check.</li></ul>
-    </article>
-    <article class="defer">
-      <h3><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span>NOT APPROVED YET</h3>
-      <ul><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Kinetic full commercial production / release.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Large fixed B2C team / major capex.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Final launch platform / final price.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Broad marketing / UA budget.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Live service / multiplayer / UGC / creator economy.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Persistent world / large content catalogue / DLC roadmap.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Horizontal metaverse platform build.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Automatic inheritance of Music World scope.</li></ul>
-    </article>
-    <article class="return">
-      <h3><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span>RETURN TO CEO AFTER EVIDENCE</h3>
-      <ul><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>Before vertical slice.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>Before material staffing/capital expansion.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>After direct product/user/payment evidence.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>After Track A paid proof/reuse/economics evidence.</li><li><span class="d-bullet" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>For formal geography / Build-Partner-Buy / organization / continue-pivot-close decisions.</li></ul>
-    </article>
-  </div>
-  <div class="unproven" data-visual="decision-boundaries"><h3>WHAT IS STILL UNPROVEN</h3><div><span>Customer validation <b>INSUFFICIENT</b></span><span>E3 <b>NOT ACHIEVED</b></span><span>SAVA RTW <b>0/25 — NOT PROVEN</b></span><span>SAVA economics <b>UNKNOWN / INSUFFICIENT</b></span><span>Geography priority <b>UNRESOLVED</b></span><span>Kinetic full production <b>NOT AUTHORIZED</b></span></div><details><summary>Xem formal decision boundaries</summary><p>D6 = UNRESOLVED. D8 = NOT AUTHORIZED. D10 = NOT AUTHORIZED. D11 = DECISION INSUFFICIENT / HOLD — NOT AUTHORIZED. Gate 7 remains BLOCKED; Gate 8 remains BLOCKED / CONDITIONAL. Các mã này là ranh giới quản trị, không phải “rejected forever”.</p></details></div>
-  <div class="final-actions"><a class="btn primary" data-full-report href="#">ĐỌC BÁO CÁO ĐẦY ĐỦ ↗</a><button class="btn" data-open-method> XEM PHƯƠNG PHÁP NGHIÊN CỨU</button><button class="btn" data-open-evidence>XEM BẰNG CHỨNG CHI TIẾT</button></div>
-  <div class="companion-note">P24‑11 là <b>companion executive brief</b>. Full P24 research report vẫn là authoritative research source.</div>
-</section>
-
 </main>
-<footer><div><b>SAVRSE — SAVA META</b><span>P24‑11 · CEO Interactive Visual Brief · v1.0</span></div><div><span>Strategy changed: NO</span><span>New research: NO</span><span>Independent report QA: PASS</span></div></footer>
-
-<dialog id="method-dialog"><button class="dialog-close" aria-label="Đóng">×</button><h2>Phương pháp — bản điều hành</h2><div class="method-flow" data-visual="method-summary"><span>Decision-first scope</span><i>→</i><span>Evidence hierarchy</span><i>→</i><span>Buyer / commercial object</span><i>→</i><span>Counter-evidence</span><i>→</i><span>RTW / economics gap</span><i>→</i><span>Recommendation + falsification</span></div><p>Desk research đã hoàn tất, nhưng customer validation và SAVA-specific commercial proof chưa đủ. Không có weighted composite score tạo ra thứ hạng Kinetic.</p><a class="btn" data-full-report href="#">Mở full methodology trong báo cáo ↗</a></dialog>
-<dialog id="evidence-dialog"><button class="dialog-close" aria-label="Đóng">×</button><h2>Bằng chứng chi tiết — chỉ các record load-bearing</h2><div class="evidence-list"><article><b>Training</b><span>UCLan/Labster £180,000 contract; Defra £118,327 award/procurement; Coventry/XVR £55,661 renewal contract.</span><small>Không đồng nhất semantic; không phải SAVA economics.</small></article><article><b>Web spatial / heritage</b><span>Derby £65,512 contract; City of Wonder £550,000 award; Historic England £400,000 framework ceiling.</span><small>Commissioned outcomes; không chứng minh universal SaaS.</small></article><article><b>Operational 3D</b><span>Glass Futures £323,000 contract; Manchester Foundation Trust £304,233.60 contract.</span><small>Real spend, nhưng integration/system-of-record dependency lớn.</small></article><article><b>B2C</b><span>586 unique sources; 135 benchmark records; 42 concepts; 44 decision sources; finalists #1/#2/#3.</span><small>Coverage ≠ proof of commercial success.</small></article></div><a class="btn" data-full-report href="#">Xem toàn bộ evidence trong báo cáo ↗</a></dialog>
-<script src="app.js"></script>
-</body></html>
+<footer><div><b>SAVRSE — SAVA META</b><br>P24-11R · CEO Comprehension Pass</div><div>Strategy changed: NO · New research: NO · Kinetic full production: NOT AUTHORIZED · Music World: PAUSE</div></footer>
+<script>
+const navToggle=document.querySelector('.nav-toggle');
+const nav=document.querySelector('#main-nav');
+navToggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(open));});
+document.querySelectorAll('#main-nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const navLinks=[...document.querySelectorAll('#main-nav a')];
+const sections=[...document.querySelectorAll('main section[id]')];
+if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-20% 0px -70% 0px'});sections.forEach(s=>io.observe(s));}
+(() => {
+  const demo=document.getElementById('factory-demo'); if(!demo) return;
+  const switchBtn=document.getElementById('factory-switch'), resetBtn=document.getElementById('factory-reset'), result=document.getElementById('factory-result'), instruction=document.getElementById('factory-instruction'), hud=document.getElementById('factory-hud-state'), handle=document.getElementById('factory-switch-handle');
+  const a=demo.querySelector('.route-to-a'), b=demo.querySelector('.route-to-b'); let routed=false, timer=null;
+  const reset=()=>{if(timer) clearTimeout(timer);routed=false;a.classList.add('active');b.classList.remove('active');handle.setAttribute('transform','translate(380 190) rotate(-42)');switchBtn.disabled=false;switchBtn.textContent='GẠT SWITCH → B';instruction.textContent='Switch đang ở A. Hãy chuyển sang B.';hud.textContent='MỤC TIÊU: đưa kiện BLUE → MACHINE B';result.classList.remove('success');result.querySelector('b').textContent='Kiện BLUE đang tới junction…';};
+  switchBtn?.addEventListener('click',()=>{if(routed)return;routed=true;a.classList.remove('active');b.classList.add('active');handle.setAttribute('transform','translate(380 190) rotate(42)');switchBtn.disabled=true;switchBtn.textContent='SWITCH ĐÃ Ở B ✓';instruction.textContent='Đúng. Theo dõi kết quả của quyết định vừa thực hiện.';result.querySelector('b').textContent='Đã đổi route → theo dõi kết quả…';timer=setTimeout(()=>{result.classList.add('success');result.querySelector('b').textContent='✓ ĐÚNG TUYẾN — Machine B nhận hàng.';hud.textContent='ROUND 1 CLEAR · tiếp theo: nhiều luồng + quá tải';},900);});
+  resetBtn?.addEventListener('click',reset);reset();
+})();
+</script>
+</body>
+</html>
