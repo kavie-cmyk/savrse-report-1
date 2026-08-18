@@ -26,31 +26,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Ensure GitHub Pages site exists
-        id: pages_init
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          status=$(curl -sS -o /tmp/pages-create.json -w "%{http_code}" \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" \
-            -d '{"build_type":"workflow"}')
-          echo "http_status=$status" >> "$GITHUB_OUTPUT"
-          if [ "$status" = "201" ] || [ "$status" = "409" ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-            echo "Pages site ready (HTTP $status)."
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "Could not create/confirm Pages site (HTTP $status):"
-            cat /tmp/pages-create.json
-          fi
-
       - name: Configure Pages
         id: configure
-        if: steps.pages_init.outputs.ready == 'true'
         continue-on-error: true
         uses: actions/configure-pages@v5
 
@@ -58,7 +35,7 @@ jobs:
         id: upload
         if: steps.configure.outcome == 'success'
         continue-on-error: true
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: .
 
@@ -71,8 +48,6 @@ jobs:
       - name: Record deployment status
         if: always()
         env:
-          INIT_HTTP: ${{ steps.pages_init.outputs.http_status }}
-          INIT_READY: ${{ steps.pages_init.outputs.ready }}
           CONFIGURE_OUTCOME: ${{ steps.configure.outcome }}
           UPLOAD_OUTCOME: ${{ steps.upload.outcome }}
           DEPLOY_OUTCOME: ${{ steps.deployment.outcome }}
@@ -82,8 +57,6 @@ jobs:
           GitHub Pages deployment status
           Repository: ${GITHUB_REPOSITORY}
           Commit: ${GITHUB_SHA}
-          Pages init HTTP: ${INIT_HTTP}
-          Pages init ready: ${INIT_READY}
           Configure Pages: ${CONFIGURE_OUTCOME}
           Upload artifact: ${UPLOAD_OUTCOME}
           Deploy Pages: ${DEPLOY_OUTCOME}
