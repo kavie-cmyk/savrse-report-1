@@ -1,0 +1,84 @@
+[
+  {
+    "viewport": "1440",
+    "horizontal_overflow": false,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "sections": 14,
+    "visuals": 39,
+    "benchmarks": 8,
+    "interactions": {
+      "track": true,
+      "finalist": true,
+      "roadmap": true,
+      "kinetic": true,
+      "dialog": true,
+      "hash": "#decisions"
+    },
+    "first_screen_has_two_track": true,
+    "first_screen_has_kinetic_boundary": true
+  },
+  {
+    "viewport": "1024",
+    "horizontal_overflow": false,
+    "scrollWidth": 1024,
+    "clientWidth": 1024,
+    "sections": 14,
+    "visuals": 39,
+    "benchmarks": 8,
+    "interactions": {
+      "track": true,
+      "finalist": true,
+      "roadmap": true,
+      "kinetic": true,
+      "dialog": true,
+      "hash": "#decisions"
+    },
+    "first_screen_has_two_track": true,
+    "first_screen_has_kinetic_boundary": true
+  },
+  {
+    "viewport": "768",
+    "horizontal_overflow": false,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "sections": 14,
+    "visuals": 39,
+    "benchmarks": 8,
+    "fallback_cards_when_external_images_blocked": 0,
+    "console_errors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "interactions": {
+      "track": true,
+      "finalist": true,
+      "roadmap": true,
+      "kinetic": true,
+      "method": true,
+      "hash": "#decisions"
+    },
+    "first_screen_has_two_track": true,
+    "first_screen_has_kinetic_boundary": true
+  },
+  {
+    "viewport": "390",
+    "horizontal_overflow": false,
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "sections": 14,
+    "visuals": 39,
+    "benchmarks": 8,
+    "fallback_cards_when_external_images_blocked": 0,
+    "console_errors": [],
+    "interactions": {
+      "track": true,
+      "finalist": true,
+      "roadmap": true,
+      "kinetic": true,
+      "method": true,
+      "hash": "#decisions"
+    },
+    "first_screen_has_two_track": true,
+    "first_screen_has_kinetic_boundary": true
+  }
+]

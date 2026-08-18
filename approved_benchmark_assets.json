@@ -1,0 +1,74 @@
+[
+  {
+    "id": "bench-labster",
+    "name": "Labster",
+    "src": "https://images.cms3.my.labster.com/images/DEM_1.png?fm=jpg",
+    "page": "https://www.labster.com/simulations/demo",
+    "source": "Labster",
+    "alt": "Ảnh từ Demo Simulation của Labster, minh họa môi trường phòng thí nghiệm ảo.",
+    "caption": "Môi trường virtual lab — sản phẩm tham chiếu cho đào tạo số."
+  },
+  {
+    "id": "bench-xvr",
+    "name": "XVR Simulation",
+    "src": "https://www.xvrsim.com/images/xvr-facilitator-and-instructor-explaining-and-teaching-on-xvr-simulation.png",
+    "page": "https://www.xvrsim.com/en/xvr-academy/",
+    "source": "XVR Simulation",
+    "alt": "Người hướng dẫn sử dụng XVR Simulation trong bối cảnh đào tạo mô phỏng.",
+    "caption": "Mô phỏng nhiệm vụ/ứng phó — sản phẩm tham chiếu."
+  },
+  {
+    "id": "bench-cesium",
+    "name": "CesiumJS",
+    "src": "https://images.prismic.io/cesium/2018-03-09-autonomouscarstop.jpg?ar=1.3333333333333333&auto=compress%2Cformat&crop=faces%2Ccenter&fit=crop&w=660",
+    "page": "https://cesium.com/platform/cesiumjs/",
+    "source": "Cesium",
+    "alt": "Ảnh minh họa ứng dụng 3D địa không gian trên trang CesiumJS chính thức.",
+    "caption": "Web spatial 3D — sản phẩm tham chiếu cho lớp ứng dụng địa không gian."
+  },
+  {
+    "id": "bench-beatsaber",
+    "name": "Beat Saber",
+    "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620980/3067664ee110fed550f5c3a1b74340cabd7d53f0/header.jpg?t=1782391636",
+    "page": "https://store.steampowered.com/app/620980/Beat_Saber/",
+    "source": "Beat Games / Steam",
+    "alt": "Ảnh sản phẩm Beat Saber trên trang Steam chính thức.",
+    "caption": "Benchmark game VR trả phí — không phải hình ảnh Kinetic."
+  },
+  {
+    "id": "bench-walkabout",
+    "name": "Walkabout Mini Golf VR",
+    "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1408230/41550e311799d354df465ebce3d7a0885eec4409/header.jpg?t=1782764505",
+    "page": "https://store.steampowered.com/app/1408230/Walkabout_Mini_Golf_VR/",
+    "source": "Mighty Coconut / Steam",
+    "alt": "Ảnh sản phẩm Walkabout Mini Golf VR trên trang Steam chính thức.",
+    "caption": "Benchmark VR có kỹ năng và lý do chơi lại."
+  },
+  {
+    "id": "bench-demeo",
+    "name": "Demeo",
+    "src": "https://images.squarespace-cdn.com/content/v1/61813b3361b99650be1a2c4c/1760093449176-8GAY7SORTEOLBVNK7C1L/Demeo%2B-%2BRealm%2Bof%2BRat%2BKing%2B-%2BCards%2BScreenshot.webp",
+    "page": "https://www.resolutiongames.com/media-kit-demeo",
+    "source": "Resolution Games",
+    "alt": "Screenshot Demeo từ media kit chính thức, với bàn chơi trong trải nghiệm tabletop adventure.",
+    "caption": "Benchmark sản phẩm VR đã phát hành — không phải sản phẩm Savrse."
+  },
+  {
+    "id": "bench-clockwinder",
+    "name": "The Last Clockwinder",
+    "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1755100/extras/6945413353a783e0a628788642deba81.webp?t=1784319834",
+    "page": "https://store.steampowered.com/app/1755100/The_Last_Clockwinder/",
+    "source": "Pontoco / Cyan Ventures / Steam",
+    "alt": "Ảnh gameplay The Last Clockwinder trên Steam, dùng làm benchmark prior art cơ chế ghi và lặp hành động.",
+    "caption": "Prior-art benchmark cho kiến trúc ghi/lặp hành động."
+  },
+  {
+    "id": "bench-weareone",
+    "name": "We Are One",
+    "src": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1669500/extras/b3a24ad7be61b5dd8fdca3e8efa9961e.avif?t=1730124709",
+    "page": "https://store.steampowered.com/app/1669500/We_Are_One/",
+    "source": "Flat Head Studio / Fast Travel Games / Steam",
+    "alt": "Ảnh gameplay We Are One trên Steam, dùng làm benchmark prior art cho cơ chế record-and-clone.",
+    "caption": "Prior-art benchmark cho kiến trúc record-and-clone."
+  }
+]
