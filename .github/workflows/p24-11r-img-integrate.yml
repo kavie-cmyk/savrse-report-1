@@ -1,0 +1,175 @@
+name: P24-11R-IMG integrate concept images
+
+on:
+  push:
+    branches: [p24-11r-img-staging]
+    paths:
+      - '.github/workflows/p24-11r-img-integrate.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: p24-11r-img-staging
+          fetch-depth: 0
+
+      - name: Integrate concept imagery into CEO brief
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = 'P24-11R-IMG-CONCEPT-INTEGRATION'
+          if marker in s:
+              raise SystemExit('Concept-image integration marker already present; refusing duplicate patch.')
+
+          css = r'''
+/* P24-11R-IMG-CONCEPT-INTEGRATION */
+.concept-photo{margin:20px 0 0;border:1px solid #d7dce3;border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.concept-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#111a26}
+.concept-photo figcaption{padding:14px 16px 4px;color:#465466;font-size:12.5px;line-height:1.5}
+.concept-photo figcaption b{color:var(--ink)}
+.concept-photo .concept-disclosure{display:block;padding:0 16px 14px;color:#8b5a20;font-size:9.5px;font-weight:900;letter-spacing:.045em}
+.concept-badges{display:flex;gap:7px;flex-wrap:wrap;padding:10px 12px;background:#182235;color:#fff}
+.concept-badges span{display:inline-flex;padding:5px 8px;border-radius:999px;background:#26354a;border:1px solid #40516d;font-size:9px;font-weight:900;letter-spacing:.06em}
+.concept-badges span.proposed{background:#5d341c;border-color:#9a5b31;color:#ffd4ae}
+.concept-image-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.concept-image-pair .concept-photo{margin:0}
+.finalist-photo{margin:0;background:#0f1824;border-bottom:1px solid var(--line)}
+.finalist-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#101a26}
+.finalist-photo figcaption{padding:9px 12px 11px;background:#fff;color:#7a5124;font-size:8.7px;font-weight:900;letter-spacing:.045em;line-height:1.35}
+.finalist-card .mini-illustration{display:none}
+.failure-visual{max-width:980px;margin:0 auto 22px}
+.failure-visual figcaption{font-size:12px}
+@media(max-width:820px){.concept-image-pair{grid-template-columns:1fr}.concept-photo{border-radius:16px}.concept-badges{align-items:flex-start}.finalist-photo figcaption{font-size:8.5px}}
+@media(max-width:520px){.concept-photo figcaption{padding:11px 12px 3px;font-size:11px}.concept-photo .concept-disclosure{padding:0 12px 12px;font-size:8.5px}.concept-badges span{font-size:8px}.failure-visual{margin-bottom:16px}}
+'''
+          if '</style>' not in s:
+              raise SystemExit('No closing style tag found.')
+          s = s.replace('</style>', css + '\n</style>', 1)
+
+          theme = '<div class="theme-note"><span class="theme-pill">FACTORY THEME ĐỀ XUẤT</span><div><b>Minh họa concept — không phải final art.</b> Nhà máy tự động, băng chuyền và Machine A/B/C được dùng để làm gameplay dễ hình dung; chưa có bằng chứng người chơi đã validate theme này.</div></div>'
+          hero = r'''
+<figure class="concept-photo hero-concept" data-concept-image="IMG-01">
+  <div class="concept-badges"><span>CONCEPT ILLUSTRATION</span><span class="proposed">FACTORY THEME ĐỀ XUẤT</span></div>
+  <img src="assets/images/concepts/kinetic-overview.svg" alt="Minh họa concept Kinetic Switchyard ở góc nhìn người chơi VR trong một sorting factory nhỏ với hai tay, băng chuyền, junction và các máy đích A B C.">
+  <figcaption><b>IMG-01 · Kinetic overview.</b> Hình dung nhanh cảm giác sản phẩm: bạn đứng ngay trong một live routing system và trực tiếp giữ nó vận hành bằng hai tay.</figcaption>
+  <span class="concept-disclosure">MINH HỌA CONCEPT — KHÔNG PHẢI FINAL ART · KHÔNG PHẢI THEME ĐÃ ĐƯỢC VALIDATE.</span>
+</figure>'''
+          if theme not in s:
+              raise SystemExit('Kinetic theme-note anchor not found.')
+          s = s.replace(theme, theme + '\n' + hero, 1)
+
+          pair = r'''
+<div class="concept-image-pair" aria-label="Kinetic supporting concept illustrations">
+  <figure class="concept-photo" data-concept-image="IMG-02">
+    <div class="concept-badges"><span>CONCEPT ILLUSTRATION</span><span class="proposed">FACTORY THEME ĐỀ XUẤT</span></div>
+    <img src="assets/images/concepts/kinetic-core-action.svg" loading="lazy" alt="Minh họa cận cảnh tay người chơi xoay switch để đổi một kiện màu xanh từ tuyến sai sang tuyến đúng.">
+    <figcaption><b>IMG-02 · Core action.</b> Tay người chơi tác động trực tiếp vào switch; thay đổi vật lý tạo hậu quả nhìn thấy ngay trên route của kiện hàng.</figcaption>
+    <span class="concept-disclosure">MINH HỌA CONCEPT — KHÔNG PHẢI FINAL ART · KHÔNG PHẢI THEME ĐÃ ĐƯỢC VALIDATE.</span>
+  </figure>
+  <figure class="concept-photo" data-concept-image="IMG-03">
+    <div class="concept-badges"><span>CONCEPT ILLUSTRATION</span><span class="proposed">FACTORY THEME ĐỀ XUẤT</span></div>
+    <img src="assets/images/concepts/kinetic-mastery.svg" loading="lazy" alt="Minh họa Kinetic ở nhịp độ cao với nhiều luồng hàng, nhiều switch, hai tay phối hợp và áp lực congestion.">
+    <figcaption><b>IMG-03 · High-intensity / mastery.</b> Độ khó đến từ nhiều luồng đồng thời, ưu tiên, phối hợp hai tay và recovery — không chỉ từ tốc độ thuần túy.</figcaption>
+    <span class="concept-disclosure">MINH HỌA CONCEPT — KHÔNG PHẢI FINAL ART · KHÔNG PHẢI THEME ĐÃ ĐƯỢC VALIDATE.</span>
+  </figure>
+</div>'''
+          anchor = '<div class="kinetic-visual-grid">'
+          if anchor not in s:
+              raise SystemExit('Kinetic visual-grid anchor not found.')
+          s = s.replace(anchor, pair + '\n' + anchor, 1)
+
+          finalist_assets = {
+              '#1 · KINETIC SWITCHYARD': ('assets/images/concepts/kinetic-overview.svg','Minh họa Kinetic Switchyard: người chơi trực tiếp định tuyến một hệ thống động bằng hai tay trong VR.'),
+              '#2 · FLOW DESK': ('assets/images/concepts/flow-desk-concept.svg','Minh họa Flow Desk dựa trên định nghĩa authoritative: tối ưu xúc giác dưới nhiều ràng buộc, với nhiều cách bố trí hợp lệ.'),
+              '#3 · TRAJECTORY TEMPLE': ('assets/images/concepts/trajectory-temple-concept.svg','Minh họa Trajectory Temple dựa trên định nghĩa authoritative: đọc quỹ đạo 3D và vật cản, ném vật lý, nhận feedback và điều chỉnh.'),
+          }
+          for rank, (src, alt) in finalist_assets.items():
+              target = f'<div class="rank">{rank}</div>'
+              if target not in s:
+                  raise SystemExit(f'Finalist anchor missing: {rank}')
+              figure = f'''<figure class="finalist-photo"><img src="{src}" loading="lazy" alt="{alt}"><figcaption>CONCEPT ILLUSTRATION · MINH HỌA CONCEPT — KHÔNG PHẢI FINAL ART</figcaption></figure>'''
+              s = s.replace(target, target + figure, 1)
+
+          failure_anchor = '<div class="kill-grid">'
+          failure = r'''
+<figure class="concept-photo failure-visual" data-concept-image="IMG-06">
+  <div class="concept-badges"><span>CONCEPT ILLUSTRATION</span><span>WHY-VR TEST</span></div>
+  <img src="assets/images/concepts/kinetic-vr-vs-flat.svg" loading="lazy" alt="Minh họa split-screen so sánh cùng logic routing trên màn hình thường dùng chuột với bản VR dùng hai tay để với, xoay và gạt switch.">
+  <figcaption><b>IMG-06 · VR vs flat.</b> Cùng một logic hệ thống: nếu thao tác bằng mouse/controller cho trải nghiệm tương đương hoặc tốt hơn embodied VR, WHY-VR thesis suy yếu.</figcaption>
+  <span class="concept-disclosure">MINH HỌA CONCEPT — KHÔNG PHẢI FINAL ART · KHÔNG PHẢI BẰNG CHỨNG NGƯỜI CHƠI ĐÃ VALIDATE.</span>
+</figure>'''
+          # place only inside failure section
+          failure_pos = s.find('<section id="failure"')
+          if failure_pos < 0:
+              raise SystemExit('Failure section not found.')
+          kill_pos = s.find(failure_anchor, failure_pos)
+          if kill_pos < 0:
+              raise SystemExit('Failure kill-grid anchor not found.')
+          s = s[:kill_pos] + failure + '\n' + s[kill_pos:]
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Structural QA
+        run: |
+          set -euo pipefail
+          for f in \
+            assets/images/concepts/kinetic-overview.svg \
+            assets/images/concepts/kinetic-core-action.svg \
+            assets/images/concepts/kinetic-mastery.svg \
+            assets/images/concepts/flow-desk-concept.svg \
+            assets/images/concepts/trajectory-temple-concept.svg \
+            assets/images/concepts/kinetic-vr-vs-flat.svg; do
+            test -s "$f"
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import re, xml.etree.ElementTree as ET
+          html = Path('index.html').read_text(encoding='utf-8')
+          concept_paths = re.findall(r'src="(assets/images/concepts/[^"]+)"', html)
+          expected = {
+            'assets/images/concepts/kinetic-overview.svg',
+            'assets/images/concepts/kinetic-core-action.svg',
+            'assets/images/concepts/kinetic-mastery.svg',
+            'assets/images/concepts/flow-desk-concept.svg',
+            'assets/images/concepts/trajectory-temple-concept.svg',
+            'assets/images/concepts/kinetic-vr-vs-flat.svg',
+          }
+          missing_refs = expected - set(concept_paths)
+          if missing_refs: raise SystemExit(f'Missing HTML refs: {missing_refs}')
+          for rel in expected:
+              p = Path(rel)
+              if not p.exists(): raise SystemExit(f'Missing asset: {p}')
+              ET.parse(p)
+          required = [
+            'Kinetic Switchyard', 'Prototype Priority', 'Flow Desk', 'Trajectory Temple',
+            'TIẾP TỤC PAUSE', 'NOT PROVEN', 'UNKNOWN / INSUFFICIENT',
+            'CONCEPT ILLUSTRATION', 'KHÔNG PHẢI FINAL ART',
+          ]
+          for text in required:
+              if text not in html: raise SystemExit(f'Required decision/disclosure text missing: {text}')
+          if 'assets/images/bench/beatsaber.jpg' not in html or 'REFERENCE / BENCHMARK' not in html:
+              raise SystemExit('Benchmark imagery/labeling was lost.')
+          if 'P24-11R-IMG-CONCEPT-INTEGRATION' not in html:
+              raise SystemExit('Integration marker missing.')
+          print('Concept refs:', len(concept_paths), 'unique:', len(set(concept_paths)))
+          print('Structural QA PASS')
+          PY
+
+      - name: Commit integrated visual pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Integrate P24-11R-IMG concept imagery into CEO brief"
+          git push origin HEAD:p24-11r-img-staging
