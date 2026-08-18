@@ -1,0 +1,38 @@
+name: Remove overlapping Kinetic unproven pill
+
+on:
+  push:
+    paths:
+      - '.github/workflows/remove-unproven-pill.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Remove overlapping pill
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old = '<article><span class="boundary-label unproven">VẪN CHƯA ĐƯỢC CHỨNG MINH</span><p>PMF, WTP, retention, commercial success và việc factory theme có hấp dẫn người chơi hay không.</p></article>'
+          new = '<article><p>PMF, WTP, retention, commercial success và việc factory theme có hấp dẫn người chơi hay không.</p></article>'
+          if old not in s:
+              raise SystemExit('Target markup not found; no changes made.')
+          p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Remove overlapping Kinetic unproven pill"
+          git push origin HEAD:main
