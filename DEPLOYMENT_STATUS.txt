@@ -1,9 +1,7 @@
 GitHub Pages deployment status
 Repository: kavie-cmyk/savrse-report-1
-Commit: 9b66a6c9b857364bc90af7e128d074d68cb0ad13
-Pages init HTTP: 403
-Pages init ready: false
-Configure Pages: skipped
+Commit: 7defbbe84934d246bbc19cf6de2604eaa01e601a
+Configure Pages: failure
 Upload artifact: skipped
 Deploy Pages: skipped
 Page URL: 
