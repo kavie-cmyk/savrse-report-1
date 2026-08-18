@@ -1,0 +1,64 @@
+name: Clone current Savrse report and patch Kinetic
+
+on:
+  push:
+    paths:
+      - '.github/workflows/clone-and-patch-kinetic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clone-and-patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Clone current savrse-report baseline
+        run: |
+          rm -rf /tmp/savrse-report-source
+          git clone --depth 1 https://github.com/kavie-cmyk/savrse-report.git /tmp/savrse-report-source
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            /tmp/savrse-report-source/ ./
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Clone current savrse-report baseline before Kinetic edits"
+            git push origin HEAD:main
+          fi
+
+      - name: Verify source and target baseline files
+        run: |
+          for f in index.html styles.css app.js; do
+            test -f "$f"
+            cmp "$f" "/tmp/savrse-report-source/$f"
+          done
+          echo "Baseline core files match source repo before patch."
+
+      - name: Patch Kinetic explainer only in target repo
+        run: python .github/scripts/patch_kinetic.py
+
+      - name: Sanity checks
+        run: |
+          grep -q "KINETIC SWITCHYARD LÀ" index.html
+          grep -q "theme nhà máy" index.html
+          grep -q "KINETIC EXPLAINER V2" styles.css
+          grep -q "factory micro-demo" app.js
+          node --check app.js
+
+      - name: Commit improved Kinetic section
+        run: |
+          git add index.html styles.css app.js README.md
+          git commit -m "Make Kinetic concept plain-language and factory-themed"
+          git push origin HEAD:main
