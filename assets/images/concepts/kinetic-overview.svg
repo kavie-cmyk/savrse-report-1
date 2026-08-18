@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Kinetic Switchyard overview concept illustration</title>
+<desc id="d">First-person VR perspective in a compact futuristic automated sorting factory with two hands, live conveyor routes, packages, routing switches and three destination machines.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1320"/><stop offset=".55" stop-color="#172536"/><stop offset="1" stop-color="#0e1724"/></linearGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24384a"/><stop offset="1" stop-color="#111a26"/></linearGradient>
+  <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c9d4df"/><stop offset="1" stop-color="#6f8298"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<path d="M0 560 L380 245 L820 245 L1200 560 V675 H0Z" fill="url(#floor)"/>
+<g opacity=".25" stroke="#8fa2b8" stroke-width="2"><path d="M120 675 470 245M310 675 520 245M890 675 680 245M1080 675 730 245"/><path d="M185 565H1015M270 480H930M355 395H845M435 315H765"/></g>
+<g font-family="system-ui,sans-serif" font-weight="800" text-anchor="middle">
+  <g transform="translate(110 105)"><rect width="250" height="155" rx="24" fill="#341c16" stroke="#f07a3a" stroke-width="4"/><rect x="55" y="58" width="140" height="75" rx="18" fill="#111827"/><text x="125" y="42" fill="#ffb16f" font-size="28">A</text></g>
+  <g transform="translate(475 70)"><rect width="250" height="175" rx="24" fill="#153227" stroke="#4ecb8b" stroke-width="4"/><rect x="55" y="70" width="140" height="80" rx="18" fill="#111827"/><text x="125" y="48" fill="#8ff0b8" font-size="28">B</text></g>
+  <g transform="translate(840 105)"><rect width="250" height="155" rx="24" fill="#152944" stroke="#57a8ff" stroke-width="4"/><rect x="55" y="58" width="140" height="75" rx="18" fill="#111827"/><text x="125" y="42" fill="#91c8ff" font-size="28">C</text></g>
+</g>
+<g fill="none" stroke-linecap="round">
+  <path d="M55 535 C230 505 335 465 450 370" stroke="#5f7082" stroke-width="34"/>
+  <path d="M450 370 C575 310 650 275 600 245" stroke="#5f7082" stroke-width="34"/>
+  <path d="M450 370 C620 385 735 345 965 260" stroke="#5f7082" stroke-width="34"/>
+  <path d="M450 370 C565 465 710 500 1125 520" stroke="#5f7082" stroke-width="34"/>
+  <path d="M70 535 C245 505 340 465 435 385" stroke="#51a9ff" stroke-width="8" filter="url(#glow)"/>
+  <path d="M468 381 C625 395 745 350 950 270" stroke="#51a9ff" stroke-width="8" filter="url(#glow)"/>
+</g>
+<g transform="translate(450 370)"><circle r="55" fill="#0c1522" stroke="#a6b7c8" stroke-width="5"/><circle r="18" fill="#ef7b3d"/><line x1="0" y1="0" x2="42" y2="-22" stroke="#ffc18f" stroke-width="12" stroke-linecap="round"/><circle cx="44" cy="-23" r="10" fill="#ffc18f"/></g>
+<g>
+  <g transform="translate(190 468)"><rect width="55" height="45" rx="8" fill="#3b82f6" stroke="#d7e9ff" stroke-width="3"/><circle cx="14" cy="12" r="3" fill="#fff"/></g>
+  <g transform="translate(320 425)"><rect width="55" height="45" rx="8" fill="#ef6b52" stroke="#ffd4cb" stroke-width="3"/></g>
+  <g transform="translate(585 360)"><rect width="55" height="45" rx="8" fill="#3b82f6" stroke="#d7e9ff" stroke-width="3"/></g>
+  <g transform="translate(735 330)"><rect width="55" height="45" rx="8" fill="#f0a33f" stroke="#ffe4b7" stroke-width="3"/></g>
+  <g transform="translate(870 310)"><rect width="55" height="45" rx="8" fill="#3b82f6" stroke="#d7e9ff" stroke-width="3"/></g>
+  <g transform="translate(780 455)"><rect width="55" height="45" rx="8" fill="#ef6b52" stroke="#ffd4cb" stroke-width="3"/></g>
+</g>
+<g transform="translate(555 455)" filter="url(#glow)"><rect x="-78" y="0" width="156" height="48" rx="24" fill="#6e281d" stroke="#f18b69" stroke-width="2"/><circle cx="-48" cy="24" r="8" fill="#ff7759"/><circle cx="-18" cy="24" r="8" fill="#ff9a5e"/><circle cx="12" cy="24" r="8" fill="#ffc45e"/></g>
+<g fill="url(#hand)" stroke="#304154" stroke-width="5">
+  <path d="M175 675 C185 610 220 555 278 520 C312 500 337 510 338 536 C337 561 304 581 280 604 C266 620 267 650 276 675Z"/>
+  <path d="M1025 675 C1015 610 980 555 922 520 C888 500 863 510 862 536 C863 561 896 581 920 604 C934 620 933 650 924 675Z"/>
+</g>
+<g fill="#ef7b3d" opacity=".9"><rect x="235" y="582" width="48" height="17" rx="8" transform="rotate(-22 235 582)"/><rect x="917" y="582" width="48" height="17" rx="8" transform="rotate(22 917 582)"/></g>
+<g opacity=".65" fill="#dce7f2"><circle cx="95" cy="80" r="4"/><circle cx="1110" cy="75" r="4"/><circle cx="1030" cy="330" r="4"/><circle cx="145" cy="340" r="4"/></g>
+</svg>
