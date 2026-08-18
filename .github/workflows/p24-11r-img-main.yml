@@ -1,0 +1,76 @@
+name: P24-11R-IMG main integration runner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/p24-11r-img-main.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reuse audited integration patch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          src = Path('.github/workflows/p24-11r-img-integrate.yml').read_text(encoding='utf-8')
+          token = "          python - <<'PY'\n"
+          start = src.index(token) + len(token)
+          end = src.index("\n          PY", start)
+          block = src[start:end]
+          lines = []
+          for line in block.splitlines():
+              lines.append(line[10:] if line.startswith('          ') else line)
+          Path('/tmp/p24_11r_img_integrate.py').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+          python /tmp/p24_11r_img_integrate.py
+
+      - name: Main-branch QA
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, xml.etree.ElementTree as ET
+          html = Path('index.html').read_text(encoding='utf-8')
+          expected = [
+            'assets/images/concepts/kinetic-overview.svg',
+            'assets/images/concepts/kinetic-core-action.svg',
+            'assets/images/concepts/kinetic-mastery.svg',
+            'assets/images/concepts/flow-desk-concept.svg',
+            'assets/images/concepts/trajectory-temple-concept.svg',
+            'assets/images/concepts/kinetic-vr-vs-flat.svg',
+          ]
+          for rel in expected:
+              p = Path(rel)
+              assert p.exists() and p.stat().st_size > 500, rel
+              ET.parse(p)
+              assert rel in html, rel
+          for required in [
+              '#1 · KINETIC SWITCHYARD', '#2 · FLOW DESK', '#3 · TRAJECTORY TEMPLE',
+              'TIẾP TỤC PAUSE', 'NOT PROVEN', 'UNKNOWN / INSUFFICIENT',
+              'CONCEPT ILLUSTRATION', 'KHÔNG PHẢI FINAL ART',
+              'assets/images/bench/beatsaber.jpg', 'REFERENCE / BENCHMARK'
+          ]:
+              assert required in html, required
+          assert html.count('P24-11R-IMG-CONCEPT-INTEGRATION') >= 1
+          assert 'concept-image-pair' in html and 'failure-visual' in html and 'finalist-photo' in html
+          print('P24-11R-IMG main QA PASS')
+          PY
+
+      - name: Commit integrated CEO visual pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Integrate P24-11R-IMG concept imagery into CEO brief"
+          git push origin HEAD:main
