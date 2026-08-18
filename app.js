@@ -55,3 +55,59 @@ document.querySelectorAll('.benchmark-media img').forEach(img=>{
   };
   img.addEventListener('error', fallback, {once:true});
 });
+
+
+// === KINETIC EXPLAINER V2 · factory micro-demo ===
+(() => {
+  const demo = document.getElementById('factory-demo');
+  if (!demo) return;
+  const pkg = document.getElementById('factory-package');
+  const switchBtn = document.getElementById('factory-switch');
+  const resetBtn = document.getElementById('factory-reset');
+  const result = document.getElementById('factory-result');
+  const instruction = document.getElementById('factory-instruction');
+  const hud = document.getElementById('factory-hud-state');
+  const handle = document.getElementById('factory-switch-handle');
+  const routeA = demo.querySelector('.route-to-a');
+  const routeB = demo.querySelector('.route-to-b');
+  let routedToB = false;
+  let timer = null;
+
+  const reset = () => {
+    if (timer) window.clearTimeout(timer);
+    routedToB = false;
+    pkg.classList.remove('running','miss');
+    void pkg.getBoundingClientRect();
+    routeA.classList.add('active');
+    routeB.classList.remove('active');
+    handle.style.transform = 'translate(380px,190px) rotate(-42deg)';
+    switchBtn.disabled = false;
+    switchBtn.textContent = 'GẠT SWITCH → B';
+    instruction.textContent = 'Switch hiện đang ở A. Hãy chuyển sang B trước khi kiện hàng tới junction.';
+    hud.textContent = 'MỤC TIÊU: đưa kiện BLUE → MACHINE B';
+    result.classList.remove('success');
+    result.querySelector('b').textContent = 'Kiện BLUE đang tới junction…';
+  };
+
+  switchBtn.addEventListener('click', () => {
+    if (routedToB) return;
+    routedToB = true;
+    routeA.classList.remove('active');
+    routeB.classList.add('active');
+    handle.style.transform = 'translate(380px,190px) rotate(42deg)';
+    switchBtn.disabled = true;
+    switchBtn.textContent = 'SWITCH ĐÃ Ở B ✓';
+    instruction.textContent = 'Đúng. Bây giờ nhìn kiện hàng đi qua junction và tới Machine B.';
+    pkg.classList.remove('miss');
+    pkg.classList.add('running');
+    result.querySelector('b').textContent = 'Đã đổi route → theo dõi kết quả…';
+    timer = window.setTimeout(() => {
+      result.classList.add('success');
+      result.querySelector('b').textContent = '✓ ĐÚNG TUYẾN — Machine B nhận hàng. Flow tiếp tục.';
+      hud.textContent = 'ROUND 1 CLEAR · tiếp theo: nhiều luồng + quá tải';
+    }, 2550);
+  });
+
+  resetBtn.addEventListener('click', reset);
+  reset();
+})();
