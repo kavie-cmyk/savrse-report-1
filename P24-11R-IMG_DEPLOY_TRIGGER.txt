@@ -1,0 +1,5 @@
+P24-11R-IMG deployment trigger
+Integrated visual content commit: 2f363de95a9b0af036c39fa0fb9c0eb37e552d8b
+Purpose: trigger GitHub Pages after the workflow-authored integration commit.
+Strategy changed: NO
+Decision state changed: NO
