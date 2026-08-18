@@ -255,27 +255,107 @@
     </article></div></details>
 </section>
 
-<section id="kinetic" class="section kinetic-section dark-section" data-section="10">
-  <div class="section-head"><span class="section-no">10</span><div><div class="eyebrow">WHAT KINETIC ACTUALLY IS</div><h2>Một workcell động nơi <span>người chơi định tuyến bằng cơ thể.</span></h2></div></div>
-  <div class="schematic-label">REPORT-DERIVED SCHEMATIC · INTERNAL CONCEPT · NOT PRODUCT SCREENSHOT</div>
-  <div class="kinetic-layout">
-    <div class="kinetic-loop" data-visual="kinetic-core-loop">
-      <div class="loop-step"><span>01</span><b>READ LIVE SYSTEM</b><small>đọc state và demand thay đổi</small></div><i>↓</i>
-      <div class="loop-step"><span>02</span><b>GRAB / ROTATE / REDIRECT / SWITCH</b><small>thao tác vật lý trực tiếp</small></div><i>↓</i>
-      <div class="loop-step"><span>03</span><b>ROUTE FLOWS</b><small>ưu tiên route, timing, recovery</small></div><i>↓</i>
-      <div class="loop-step"><span>04</span><b>SCORE / THROUGHPUT FEEDBACK</b><small>kết quả phải đọc được và đáng tin</small></div><i>↓</i>
-      <div class="loop-step"><span>05</span><b>SYSTEM CHANGES → OPTIMIZE → RETRY</b><small>tạo personal best và mastery nếu loop hoạt động</small></div>
-    </div>
-    <div class="kinetic-side">
-      <div class="fantasy-card" data-visual="player-fantasy"><span>PLAYER FANTASY</span><blockquote>“Bộ não định tuyến bằng cơ thể trong một hệ thống sống.”</blockquote><small>Giả thuyết thiết kế cần prototype — không phải user quote.</small></div>
-      <div class="hypothesis-grid" data-visual="kinetic-hypotheses"><article><span>WHY‑VR</span><b>MEDIUM–HIGH</b><small>hypothesis</small></article><article><span>REPLAY</span><b>HIGH</b><small>hypothesis</small></article><article><span>PROTOTYPE FEASIBILITY</span><b>HIGH</b><small>hypothesis</small></article><article><span>COMMERCIAL CONFIDENCE</span><b>NOT PROVEN</b><small>no PMF/WTP/retention proof</small></article></div>
+<section id="kinetic" class="section kinetic-section kinetic-explainer-v2" data-section="10">
+  <div class="section-head kinetic-head-simple">
+    <span class="section-no">10</span>
+    <div>
+      <div class="eyebrow">WHAT KINETIC ACTUALLY IS · PLAIN-LANGUAGE VERSION</div>
+      <h2>KINETIC SWITCHYARD LÀ <span>GAME GÌ?</span></h2>
+      <p class="kinetic-one-liner"><b>Bạn đứng trong một nhà máy tự động đang chạy liên tục và dùng hai tay trong VR để chuyển các kiện hàng tới đúng máy trước khi dây chuyền bị rối hoặc quá tải.</b></p>
+      <p class="kinetic-subline">Ban đầu chỉ có vài kiện hàng và vài điểm chuyển hướng. Sau đó mọi thứ nhanh hơn, nhiều luồng xuất hiện cùng lúc và bạn phải nhìn trước, đổi đường, cứu lỗi và phối hợp hai tay để giữ cả hệ thống chạy trơn tru.</p>
     </div>
   </div>
-  <div class="mvp-boundary" data-visual="mvp-boundary"><div class="mvp-in"><h3>PROTOTYPE — IN</h3><span>compact workcell</span><span>routing & live state</span><span>feedback / scoring</span><span>replay / skill</span><span>fairness / readability</span><span>VR vs flat test</span></div><div class="mvp-out"><h3>NOT IN THIS PROTOTYPE</h3><span>large world</span><span>social graph</span><span>creator economy</span><span>marketplace</span><span>broad multiplayer</span><span>live-service complexity</span></div></div>
-  <div class="mechanic-demo" data-visual="kinetic-micro-interaction">
-    <div class="demo-copy"><span>ABSTRACT MECHANIC DEMONSTRATION</span><h3>Sơ đồ minh họa cơ chế — không phải gameplay prototype.</h3><p>Nhấn các switch để thay route của luồng. Mục đích chỉ là minh họa “state → physical reroute → feedback”.</p><button id="reset-demo" class="btn small">Reset route</button></div>
-    <div class="routing-board" role="group" aria-label="Minh họa routing trừu tượng"><svg viewBox="0 0 620 280" role="img" aria-label="Sơ đồ trừu tượng các node và route Kinetic"><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z"/></marker></defs><path class="route route-a active" d="M80 140 C170 140 180 70 280 70 S420 70 540 70"/><path class="route route-b" d="M80 140 C170 140 180 210 280 210 S420 210 540 210"/><path class="route route-c active" d="M280 70 C340 70 350 145 430 145 S500 70 540 70"/><circle class="source-node" cx="70" cy="140" r="28"/><circle class="target-node" cx="555" cy="70" r="26"/><circle class="target-node alt" cx="555" cy="210" r="26"/><circle class="switch-node sw1" cx="280" cy="140" r="24"/><circle class="switch-node sw2" cx="430" cy="145" r="24"/><text x="50" y="145">IN</text><text x="542" y="75">A</text><text x="542" y="215">B</text><text x="263" y="145">S1</text><text x="413" y="150">S2</text></svg><button class="switch-btn sw1-btn" data-switch="1">Switch S1</button><button class="switch-btn sw2-btn" data-switch="2">Switch S2</button><div class="throughput"><span>FLOW FEEDBACK</span><b id="flow-state">Route A active</b></div></div>
+
+  <div class="theme-disclosure">
+    <span class="theme-pill">THEME MINH HỌA ĐỀ XUẤT</span>
+    <div><b>Nhà máy tự động / sorting plant tương lai</b><small>Theme này được bổ sung để giúp người đọc hình dung gameplay. Đây <b>chưa phải</b> art direction hay theme cuối cùng đã được research chứng minh.</small></div>
   </div>
+
+  <div class="kinetic-simple-grid" data-visual="kinetic-explained-simple">
+    <article class="simple-card"><span class="simple-no">01</span><h3>Bạn nhìn thấy gì?</h3><p>Một dây chuyền nhỏ trước mặt: <b>đầu vào → băng chuyền → điểm chuyển hướng → các máy đích.</b> Kiện hàng liên tục chạy vào và mỗi kiện cần đi tới đúng nơi.</p></article>
+    <article class="simple-card"><span class="simple-no">02</span><h3>Bạn làm gì?</h3><p><b>Nhìn → với tay → cầm/xoay/gạt switch → đổi đường → nhìn kết quả → xử lý việc tiếp theo.</b> Bạn thao tác trực tiếp bằng hai tay, không chỉ chọn menu.</p></article>
+    <article class="simple-card"><span class="simple-no">03</span><h3>Mục tiêu là gì?</h3><p>Giữ dòng hàng chạy <b>đúng, nhanh và ít tắc</b> khi tình hình liên tục thay đổi. Đây không phải puzzle chỉ có một đáp án rồi chơi xong.</p></article>
+    <article class="simple-card"><span class="simple-no">04</span><h3>Vì sao chơi lại?</h3><p>Lần sau bạn có thể <b>đọc tình hình sớm hơn, phối hợp hai tay tốt hơn, ít thao tác thừa hơn và đạt personal best cao hơn.</b></p></article>
+  </div>
+
+  <div class="factory-snapshot" data-visual="factory-gameplay-snapshot">
+    <div class="snapshot-copy">
+      <span class="snapshot-kicker">HÃY TƯỞNG TƯỢNG 30 GIÂY CHƠI</span>
+      <h3>Một kiện BLUE đang đi sai đường.</h3>
+      <ol class="thirty-seconds">
+        <li><b>0–5s</b><span>Một kiện BLUE đi vào dây chuyền. Đích của nó là <b>Machine B</b>.</span></li>
+        <li><b>5–10s</b><span>Switch đang để hướng A. Nếu bạn không làm gì, kiện hàng sẽ đi sai máy.</span></li>
+        <li><b>10–15s</b><span>Bạn đưa tay ra và <b>gạt switch sang B</b> trước khi kiện hàng tới junction.</span></li>
+        <li><b>15–20s</b><span>Kiện BLUE vào đúng Machine B. Flow tiếp tục, điểm/throughput tăng.</span></li>
+        <li><b>20–30s</b><span>Một kiện khác xuất hiện, Machine B sắp quá tải và bạn phải xử lý <b>hai việc gần như cùng lúc</b>.</span></li>
+      </ol>
+    </div>
+
+    <div class="factory-demo" id="factory-demo" aria-label="Minh họa tương tác Kinetic trong theme nhà máy">
+      <div class="factory-hud"><span>FACTORY CELL 01</span><b id="factory-hud-state">MỤC TIÊU: đưa kiện BLUE → MACHINE B</b></div>
+      <svg class="factory-svg" viewBox="0 0 760 390" role="img" aria-label="Sơ đồ nhà máy với băng chuyền, switch và hai máy đích">
+        <defs>
+          <marker id="factoryArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L0,8 L9,4 z" fill="currentColor"/></marker>
+          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity=".18"/></filter>
+        </defs>
+        <rect class="factory-floor" x="15" y="18" width="730" height="350" rx="24"/>
+        <g class="machine infeed" transform="translate(42 140)"><rect width="130" height="100" rx="14"/><text x="65" y="39" text-anchor="middle">INFEED</text><text x="65" y="66" text-anchor="middle">KIỆN HÀNG</text></g>
+        <path class="belt belt-main" d="M172 190 H350"/>
+        <circle class="junction-ring" cx="380" cy="190" r="34"/>
+        <path class="belt route-to-a" d="M410 180 C490 145 510 105 585 105"/>
+        <path class="belt route-to-b active" d="M410 200 C490 235 510 285 585 285"/>
+        <g class="machine machine-a" transform="translate(585 55)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE A</text><text x="68" y="67" text-anchor="middle">RED</text></g>
+        <g class="machine machine-b target" transform="translate(585 235)"><rect width="135" height="100" rx="14"/><text x="68" y="40" text-anchor="middle">MACHINE B</text><text x="68" y="67" text-anchor="middle">BLUE ✓</text></g>
+        <g class="switch-handle" id="factory-switch-handle" transform="translate(380 190)"><circle r="25"/><line x1="0" y1="0" x2="18" y2="-18"/><circle cx="21" cy="-21" r="7"/></g>
+        <g class="package package-blue" id="factory-package" transform="translate(205 190)"><rect x="-19" y="-16" width="38" height="32" rx="6"/><text x="0" y="5" text-anchor="middle">B</text></g>
+        <text class="belt-label" x="258" y="169">BĂNG CHUYỀN</text>
+        <text class="belt-label" x="347" y="244">SWITCH</text>
+      </svg>
+      <div class="factory-controls">
+        <div class="factory-instruction"><span>BƯỚC 1</span><b id="factory-instruction">Switch hiện đang ở A. Hãy chuyển sang B trước khi kiện hàng tới junction.</b></div>
+        <button type="button" class="factory-action" id="factory-switch">GẠT SWITCH → B</button>
+        <button type="button" class="factory-reset" id="factory-reset">Chơi lại minh họa</button>
+      </div>
+      <div class="factory-result" id="factory-result"><span>LIVE FEEDBACK</span><b>Kiện BLUE đang tới junction…</b></div>
+    </div>
+  </div>
+
+  <div class="mastery-explainer" data-visual="kinetic-mastery-explainer">
+    <div class="mastery-copy"><span>ĐIỀU LÀM NÓ THÀNH GAME</span><h3>Không phải “tìm đáp án”. Là <span>ngày càng vận hành giỏi hơn.</span></h3><p>Lần đầu bạn chỉ cố không làm sai. Sau nhiều lần chơi, bạn bắt đầu dự đoán congestion trước khi nó xảy ra, dùng hai tay song song, chọn việc ưu tiên tốt hơn và phục hồi lỗi nhanh hơn.</p></div>
+    <div class="difficulty-ladder">
+      <div><b>LEVEL 1</b><span>1 luồng · 1 switch</span><small>Hiểu thao tác</small></div><i>→</i>
+      <div><b>LEVEL 2</b><span>Nhiều luồng</span><small>Chọn đúng route</small></div><i>→</i>
+      <div><b>LEVEL 3</b><span>Xung đột / quá tải</span><small>Ưu tiên & recovery</small></div><i>→</i>
+      <div><b>MASTERY</b><span>Dự đoán + hai tay</span><small>Personal best</small></div>
+    </div>
+  </div>
+
+  <div class="kinetic-plain-loop" data-visual="kinetic-core-loop-plain">
+    <h3>Core loop — dịch sang ngôn ngữ người chơi</h3>
+    <div class="plain-loop-row"><span>NHÌN TÌNH HÌNH</span><i>→</i><span>ĐỔI ĐƯỜNG BẰNG TAY</span><i>→</i><span>XEM KẾT QUẢ</span><i>→</i><span>XỬ LÝ TÌNH HUỐNG MỚI</span><i>→</i><strong>CHƠI LẠI TỐT HƠN</strong></div>
+    <small>Research terminology phía sau: read changing state → physically reroute → observe result → score/throughput feedback → demand changes → recover/optimize → retry/personal best.</small>
+  </div>
+
+  <div class="kinetic-evidence-boundary">
+    <article><span class="boundary-label supported">RESEARCH-SUPPORTED CORE</span><p>Routing trong live system; reach/grab/rotate/redirect/switch; changing state; recovery/optimization; mastery/retry hypothesis; VR-vs-flat falsification.</p></article>
+    <article><span class="boundary-label proposed">PRODUCT VISUALIZATION ADDED HERE</span><p>Nhà máy tự động, băng chuyền, kiện hàng và Machine A/B là <b>theme minh họa đề xuất</b> để làm concept dễ hình dung hơn — chưa khóa final theme.</p></article>
+    <article><span class="boundary-label unproven">VẪN CHƯA ĐƯỢC CHỨNG MINH</span><p>PMF, WTP, retention, commercial success và việc factory theme có hấp dẫn người chơi hay không.</p></article>
+  </div>
+
+  <div class="kinetic-research-details">
+    <div class="hypothesis-grid" data-visual="kinetic-hypotheses">
+      <article><span>WHY‑VR</span><b>MEDIUM–HIGH</b><small>hypothesis</small></article>
+      <article><span>REPLAY</span><b>HIGH</b><small>hypothesis</small></article>
+      <article><span>PROTOTYPE FEASIBILITY</span><b>HIGH</b><small>hypothesis</small></article>
+      <article><span>COMMERCIAL CONFIDENCE</span><b>NOT PROVEN</b><small>no PMF/WTP/retention proof</small></article>
+    </div>
+    <div class="mvp-boundary" data-visual="mvp-boundary">
+      <div class="mvp-in"><h3>PROTOTYPE — IN</h3><span>compact factory workcell</span><span>routing & live state</span><span>grab / rotate / switch</span><span>feedback / scoring</span><span>replay / skill</span><span>VR vs flat test</span></div>
+      <div class="mvp-out"><h3>NOT IN THIS PROTOTYPE</h3><span>large world</span><span>social graph</span><span>creator economy</span><span>marketplace</span><span>broad multiplayer</span><span>live-service complexity</span></div>
+    </div>
+  </div>
+
+  <div class="kinetic-bottom-line"><span>NÓI GỌN TRONG 1 CÂU</span><b>Kinetic = “giữ một nhà máy đang chạy khỏi rối tung bằng cách dùng hai tay để định tuyến, ưu tiên và cứu lỗi — rồi chơi lại để vận hành giỏi hơn chính lần trước.”</b></div>
 </section>
 
 <section id="falsification" class="section red-section" data-section="11">

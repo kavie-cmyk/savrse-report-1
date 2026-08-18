@@ -29,3 +29,6 @@ CEO-facing interactive visual strategy brief for Savrse — SAVA Meta. This is a
 
 ## Deployment
 Static site. No build step or heavy framework required. GitHub deployment was not performed because no target repository was supplied.
+
+## Kinetic explainer v2
+The Kinetic section uses an automated-factory/sorting-plant theme as a communication visualization. The factory theme is proposed/illustrative, not a research-proven final theme. Research-supported interaction and decision boundaries remain unchanged.
