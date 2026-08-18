@@ -70,3 +70,5 @@ jobs:
             git commit -m "Record GitHub Pages deployment status"
             git push origin HEAD:main
           fi
+
+# Retry marker: Pages enabled by repository admin on 2026-08-19.
